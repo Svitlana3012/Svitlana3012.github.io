@@ -1,0 +1,307 @@
+@font-face {
+    font-family: 'lucida_sans_unicoderegular';
+    src: url('../fonts/lsansuni-webfont.woff2') format('woff2'),
+         url('../fonts/lsansuni-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+  padding: 17px 46px 17px 46px;
+  color: #114165;
+  width: 908px;
+  font-family: 'lucida_sans_unicoderegular', Arial, sans-serif;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-height: 100vh;
+}
+main {
+  flex-grow: 1;
+}
+header {
+ display: flex;
+ align-items: center;
+ justify-content: space-around;
+}
+footer {
+
+}
+.phone {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  width: 300px;
+}
+.round {
+  height: 21px;
+  width: 21px;
+  background: linear-gradient(#0c3357, #1e6584);
+  border-radius: 100%;
+  text-align:center;
+}
+.round i {
+  display: inline-block;
+  color: white;
+  vertical-align: middle;
+}
+.bigfigures {
+  text-decoration: none;
+  font-family: Arial;
+  font-size: 18px;
+  color: #5e696d;
+}
+.registration {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: linear-gradient(#1e6584, #0c3357);
+  box-shadow: 2px 2px 5px;
+  border-radius: 5px;
+  height: 26px;
+  width: 495px;
+  padding: 0 8px;
+}
+input {
+  margin: 3px 3px 4px 3px;
+  width: 113px;
+}
+.registration a {
+  font-size: 11px;
+}
+.entry {
+  color: white;
+  text-decoration: none;
+}
+.separator {
+  border-left: 1px solid white;
+  color: white;
+  text-decoration: none;
+}
+.forget {
+  color: #bfbfbf;
+  text-decoration: underline;
+  margin-left: 20px;
+}
+.icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: #76848a;
+  border: 2px solid #76848a;
+  box-shadow: 2px 2px 5px;
+  border-radius: 50px;
+  height: 20px;
+  width: 75px;
+}
+.main_pic {
+  margin: 10px 0 6px 0;
+}
+.main_menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background: linear-gradient(#505860, #010101);
+  border: 1px solid black;
+  box-shadow: 2px 2px 5px;
+  border-radius: 5px;
+  height: 33px;
+  width: 908px;
+}
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.menu a {
+  color: #b1bcc0;
+  text-decoration: none;
+  font-size: 13,64px;
+}
+.menu li {
+  padding: 8px 10px;
+}
+.menu li:hover {
+  background: linear-gradient(#1f6787, #0c3357);
+  border-radius: 20px;
+  padding: 8px 18px;
+}
+.menu li:hover a {
+  color: white;
+}
+.shopping-cart {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  width: 214px;
+  margin: 0 13px 0 50px;
+}
+.shopping-cart a {
+  display: inline-block;
+  font: 11px Arial;
+  color: #929b9f;
+  text-decoration: none;
+}
+.blue_figures {
+  color: #0d5a8f;
+  font: 12px Arial;
+}
+.choise {
+  display: flex;
+}
+.side_bar {
+  width: 188px;
+}
+.side_bar_title {
+  display: flex;
+  align-items: center;
+  justify-content:flex-start;
+  border: 1px solid #8b979c;
+  border-radius: 20px;
+  box-shadow: 2px 2px 5px .5px #8b979c;
+  margin: 18px 10px 13px 0;
+  padding: 4px;
+  width: 183px;
+}
+.title {
+  text-transform: uppercase;
+  font-size: 13px;
+  margin: 6px;
+}
+.side_bar_catalog {
+  display: flex;
+  align-items: center;
+  border: 1px solid #8b979c;
+  border-radius: 20px;
+  width: 148px;
+  height: 27px;
+  padding: 4px;
+  font-size: 14px;
+  color: #79878d;
+}
+.side_bar_catalog_item {
+  padding-left: 4px;
+}
+label {
+  display: inline-block;
+  cursor: pointer;
+  padding-left: 25px;
+  margin-left: 25px;
+  position: relative;
+  font-size: 13px;
+  color: #79878d;
+  line-height: 17px;
+}
+input[type=radio] {
+  display: none;
+}
+.circle::before {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 3px;
+  bottom: 3px;
+  left: 0;
+  position: absolute;
+  background-color: white;
+  border: 1px solid #79878d;
+  border-radius: 3px;
+}
+input[type=radio]:checked + .circle::before {
+  border: 1px solid #313a55;
+  border-radius: 3px;
+}
+.square::before {
+  content: "";
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin-right: 3px;
+  bottom: 3px;
+  left: 0;
+  position: absolute;
+  background-color: white;
+  border: 1px solid #79878d;
+}
+input[type=radio]:checked + .square::before {
+  border: 1px solid #313a55;
+  box-shadow: inset 0 1px #313a55;
+}
+label:hover {
+  font-size: 14px;
+  font-family: Arial;
+  font-style: italic;
+  font-weight: bold;
+  color: #79878d;
+  text-decoration: underline;
+}
+.tires {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  flex-wrap: wrap;
+  height: 627px;
+  width: 527px;
+  padding: 15px;
+  background: linear-gradient(#e4e7e8, #93a7b0);
+  margin: 15px 10px;
+}
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.goodyear {
+  height: 127px;
+  width: 138px;
+  background: url("../img/sprite-tires.png") 0 0 no-repeat;
+  border: 1px solid #b0b9bc;
+  border-radius: 10px;
+  background-color: white;
+  }
+ .nokian {
+    height: 127px;
+    width: 138px;
+    background: url("../img/sprite-tires.png") -172px 0 no-repeat;
+    border: 1px solid #b0b9bc;
+    border-radius: 10px;
+    background-color: white;
+  }
+ .hankook {
+    height: 127px;
+    width: 138px;
+    background: url("../img/sprite-tires.png") -335px 0 no-repeat;
+    border: 1px solid #b0b9bc;
+    border-radius: 10px;
+    background-color: white;
+  }
+  .tire-name {
+    color: #206988;
+    font-size: 15px;
+  }
+  .tire-class {
+    color: #1f2528;
+    font-size: 13px;
+  }
+  .price {
+    color: #114165;
+    font-family: Arial;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 5px;
+  }
+  .button {
+    width: 81px;
+    height: 23px;
+    background: linear-gradient(#0c3357, #1e6584);
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    border-radius: 25px;
+    font-family: Arial;
+    font-size: 11px;
+  }
