@@ -6,7 +6,7 @@
     font-style: normal;
 }
 body {
-  padding: 17px 46px 17px 46px;
+  margin: 17px auto;
   color: #114165;
   width: 908px;
   font-family: 'lucida_sans_unicoderegular', Arial, sans-serif;
@@ -88,12 +88,14 @@ input {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  color: #76848a;
   border: 2px solid #76848a;
   box-shadow: 2px 2px 5px;
   border-radius: 50px;
   height: 20px;
   width: 75px;
+}
+.icons a {
+  color: #76848a;
 }
 .main_pic {
   margin: 10px 0 6px 0;
@@ -117,7 +119,7 @@ input {
 .menu a {
   color: #b1bcc0;
   text-decoration: none;
-  font-size: 13,64px;
+  font-size: 14px;
 }
 .menu li {
   padding: 8px 10px;
