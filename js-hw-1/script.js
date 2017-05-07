@@ -37,7 +37,18 @@
     break;
   } else {
     alert('Попробуйте еще раз');
+    break;
   }
 }
   console.log('array', arr);
+
+  //task 3
+  var str = prompt('Ведите слово');
+  var arrow = str.split('');
+  // var newArrow = arrow.sort()
+  var newArrow = arrow.reverse();
+  var newStr = newArrow.join ('');
+  console.log(arrow);
+  console.log(newArrow);
+  console.log(newStr);
 })();
