@@ -11,9 +11,9 @@
 
   } else {
     for (var i = 1; i < b; i++) {
-      result = 1 / result * a;
+      result *= a;
     }
-  return (result);
+  return (1 / result);
 }
   }
 
