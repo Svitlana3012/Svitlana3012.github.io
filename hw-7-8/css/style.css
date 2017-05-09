@@ -1,0 +1,82 @@
+@white-shadow {
+  color: white;
+  text-shadow: .1rem .1rem .2rem black;
+}
+
+@purple-gradient {
+  background-image: linear-gradient(#745083, #322539);
+}
+
+
+@font-face {
+  font-family: "OpenSansLight";
+  src: url("../fonts/OpenSansLight/OpenSansLight.eot");
+  src: url("../fonts/OpenSansLight/OpenSansLight.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSansLight/OpenSansLight.woff") format("woff"), url("../fonts/OpenSansLight/OpenSansLight.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "LeagueGothicRegular";
+  src: url("../fonts/LeagueGothicRegular/LeagueGothicRegular.eot");
+  src: url("../fonts/LeagueGothicRegular/LeagueGothicRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/LeagueGothicRegular/LeagueGothicRegular.woff") format("woff"), url("../fonts/LeagueGothicRegular/LeagueGothicRegular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font: "LeagueGothicRegular", Aral, sans-serif;
+}
+
+p {
+  font: "OpenSansLight", 1 rem, Arial, sans-serif;
+}
+
+@white-shadow {
+  color: white;
+  text-shadow: .1rem .1rem .2rem black;
+}
+
+@purple-gradient {
+  background-image: linear-gradient(#745083, #322539);
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  min-height: 100vh;
+}
+
+header {
+  background-image: url(../img/main-pic.jpg);
+  height: 36.8rem;
+}
+
+.main {
+  flex-grow: 1;
+}
+
+@font-face {
+  font-family: "OpenSansLight";
+  src: url("../fonts/OpenSansLight/OpenSansLight.eot");
+  src: url("../fonts/OpenSansLight/OpenSansLight.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSansLight/OpenSansLight.woff") format("woff"), url("../fonts/OpenSansLight/OpenSansLight.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "LeagueGothicRegular";
+  src: url("../fonts/LeagueGothicRegular/LeagueGothicRegular.eot");
+  src: url("../fonts/LeagueGothicRegular/LeagueGothicRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/LeagueGothicRegular/LeagueGothicRegular.woff") format("woff"), url("../fonts/LeagueGothicRegular/LeagueGothicRegular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font: "LeagueGothicRegular", Aral, sans-serif;
+}
+
+p {
+  font: "OpenSansLight", 1 rem, Arial, sans-serif;
+}

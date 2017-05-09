@@ -1,0 +1,24 @@
+{
+  "name": "gulp-sass-starter",
+  "version": "1.0.0",
+  "description": "Template to start learning sass",
+  "main": "gulpfile.js",
+  "scripts": {
+    "watch": "./node_modules/.bin/gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mkhrystunov/gulp-sass-starter.git"
+  },
+  "author": "Maksym Khrystunov <mkhrystunov@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mkhrystunov/gulp-sass-starter/issues"
+  },
+  "homepage": "https://github.com/mkhrystunov/gulp-sass-starter#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^3.1.0"
+  }
+}

@@ -1,0 +1,28 @@
+@font-face {
+  font-family: "OpenSansLight";
+  src: url("../fonts/OpenSansLight/OpenSansLight.eot");
+  src: url("../fonts/OpenSansLight/OpenSansLight.eot?#iefix")format("embedded-opentype"),
+  url("../fonts/OpenSansLight/OpenSansLight.woff") format("woff"),
+  url("../fonts/OpenSansLight/OpenSansLight.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "LeagueGothicRegular";
+  src: url("../fonts/LeagueGothicRegular/LeagueGothicRegular.eot");
+  src: url("../fonts/LeagueGothicRegular/LeagueGothicRegular.eot?#iefix")format("embedded-opentype"),
+  url("../fonts/LeagueGothicRegular/LeagueGothicRegular.woff") format("woff"),
+  url("../fonts/LeagueGothicRegular/LeagueGothicRegular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+$font-title: "LeagueGothicRegular", Aral, sans-serif;
+$font-text: "OpenSansLight", 1 rem, Arial, sans-serif;
+
+h1, h2, h3, h4, h5, h6 {
+  font: $font-title;
+}
+p {
+  font: $font-text;
+}
