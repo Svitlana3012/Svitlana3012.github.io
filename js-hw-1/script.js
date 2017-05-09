@@ -8,28 +8,35 @@
     for (var i = 1; i < b; i++) {
       result *= a;
     }
-  return (result);
+  return result;
 
   } else {
-    for (var i = 1; i < b; i++) {
+    for (var j = 1; j < b; j++) {
       result *= a;
     }
-  return (1 / result);
+  return 1 / result;
 }
-  }
-
-  if (isNaN(num || pow)) {
-    alert('Значение должно быть ЧИСЛОВЫМ');
-  } else {
-    calculate(num, pow);
   }
 
   var num = prompt('Введите число для просчета');
   var pow = prompt('Введите значение степени для просчета');
-  var result = calculate(num, pow);
+
+    if (isNaN(num)) {
+      while (isNaN(num)) {
+        alert('Значение должно быть ЧИСЛОВЫМ');
+        num = prompt('Введите число для просчета');
+      }
+    } else if (isNaN(pow)) {
+       while (isNaN(pow)) {
+        alert('Значение должно быть ЧИСЛОВЫМ');
+        pow = prompt('Введите значение степени для просчета');
+      }
+
+    } else {
+       var result = calculate(+num, +pow);
+    }
   console.log('result is: ', result);
 //
-
 //task 2
   var arr = [];
   for (var i = 0; i < 5; i++) {
@@ -38,7 +45,7 @@
 
   var name = prompt('Ваше имя пользователя');
 
-  for (var i = 0; i < 5; i++) {
+  for (var j = 0; j < 5; j++) {
   if (name == arr [i]) {
     alert(name + ',Вы успешно вошли');
     break;
