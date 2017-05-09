@@ -17,6 +17,13 @@
   return (1 / result);
 }
   }
+
+  if (isNaN(num || pow)) {
+    alert('Значение должно быть ЧИСЛОВЫМ');
+  } else {
+    calculate(num, pow);
+  }
+
   var num = prompt('Введите число для просчета');
   var pow = prompt('Введите значение степени для просчета');
   var result = calculate(num, pow);
