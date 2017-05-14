@@ -52,6 +52,11 @@ a {
   justify-content: center;
 }
 
+[class*="box"] {
+  display: flex;
+  flex-direction: column;
+}
+
 header {
   background: url("../img/bg.png") -65rem 0 no-repeat;
   height: 32.3rem;
@@ -90,16 +95,31 @@ header {
   text-transform: uppercase;
   color: white;
   text-shadow: .05rem .05rem .2rem #505050;
+  width: 3.4rem;
+  text-align: center;
 }
 
 .menu .submenu {
   position: absolute;
   display: none;
-  left: 7.5rem;
+  left: 0;
+  top: 1rem;
+  width: auto;
 }
 
 .menu .submenu li {
+  display: block;
   text-align: left;
+  width: 8rem;
+}
+
+.menu .submenu a {
+  display: block;
+  padding: .2rem;
+}
+
+.menu .home a:hover {
+  display: block;
 }
 
 .menu .home:hover .submenu {
@@ -128,10 +148,17 @@ article h3 {
   }
 }
 
+.wrapper-cell {
+  position: relative;
+  top: -2.6rem;
+  z-index: 1;
+}
+
 .wrapper-arrows {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
 .wrapper-arrows .arrow1 {
@@ -164,6 +191,8 @@ article h3 {
 }
 
 .wrapper-purple {
+  display: flex;
+  flex-flow: column wrap;
   height: 37.37rem;
   width: 100%;
   background: linear-gradient(#745083, #322539);
@@ -178,26 +207,132 @@ article h3 {
   padding: 1.37rem;
 }
 
-.item .icon-tool {
-  background: url("../img/sprite.png") -14.21rem 0 no-repeat;
+.item [class*="icon"] {
   height: 1.56rem;
   width: 1.56rem;
   padding: .3rem;
 }
 
+.item .icon-tool {
+  background: url("../img/sprite.png") -14.21rem 0 no-repeat;
+}
+
+.item .icon-talk {
+  background: url("../img/sprite.png") -11.19rem 0 no-repeat;
+}
+
+.item .icon-music {
+  background: url("../img/sprite.png") -8rem 0 no-repeat;
+}
+
 .item .article {
   padding: .3rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .item .article a {
   color: white;
   text-shadow: .05rem .05rem .2rem #505050;
-  padding: .1rem;
+  padding: .8rem .1rem;
+  align-self: flex-end;
+}
+
+.item .article a:hover {
+  text-shadow: 0 0 .5rem white;
 }
 
 .item .article p {
   line-height: 1.3rem;
   width: 12.25rem;
+  padding-top: .3rem;
+}
+
+.box-light-gray {
+  height: 75.56rem;
+  width: 100%;
+  background: #f9f9f9;
+  border-top: .01rem solid white;
+}
+
+.box-light-gray::before {
+  display: block;
+  content: '';
+  height: .6rem;
+  width: 100%;
+  background: linear-gradient(#c7c7c7, #f9f9f9);
+  clear: both;
+}
+
+.slider-small .talking-area {
+  position: relative;
+  height: 14rem;
+  width: 11rem;
+  background: white;
+  border-bottom: .01rem solid #efefef;
+  padding: 1.75rem 2.5rem 2rem 2.06rem;
+  margin: 2.5rem;
+}
+
+.slider-small .talking-area p {
+  line-height: 1.3rem;
+  width: 12.25rem;
+  padding-top: .3rem;
+}
+
+.slider-small .dark-gray {
+  text-transform: uppercase;
+  color: #454545;
+}
+
+.slider-small .light-purple {
+  text-transform: uppercase;
+  color: #edbfff;
+}
+
+.icon-round, .icon-round1 {
+  position: relative;
+  z-index: 1;
+  top: 7rem;
+  left: 1.25rem;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 1.5rem;
+  background: url("../img/sprite.png") -21.75rem 0 no-repeat;
+}
+
+.wrapper-bullets-small {
+  margin-top: 1.5rem;
+}
+
+.box-updates {
+  margin-top: 3.06rem;
+}
+
+.box-updates h1 {
+  margin-left: 1.25rem;
+}
+
+.box-updates article {
+  margin-top: 1.25rem;
+}
+
+.box-updates article .bold {
+  font-weight: bold;
+}
+
+.box-updates article p {
+  padding-left: 5rem;
+}
+
+.box-updates a {
+  color: #454545;
+  align-self: flex-end;
+  padding: 1.4rem;
+}
+
+.icon-round1 {
+  top: 2.6rem;
 }
 
 @font-face {

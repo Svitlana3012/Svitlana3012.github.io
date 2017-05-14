@@ -31,11 +31,10 @@ main
     title2
     text
     link
- wrapper
+ wrapper-light-gray
   slider-small
-   icon round
-   article
-    wrapper-talking-area
+   icon-round
+   article talking-area
     title2
     text
    bullets
@@ -49,7 +48,7 @@ main
  wrapper
   img
   link
- wrapper-gray
+ wrapper-medium-gray
   item
    logo-monokhrom
    copyright
