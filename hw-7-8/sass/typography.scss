@@ -17,12 +17,24 @@
   font-weight: normal;
 }
 
-$font-title: "LeagueGothicRegular", Aral, sans-serif;
-$font-text: "OpenSansLight", 1 rem, Arial, sans-serif;
+$font-title: "LeagueGothicRegular";
+$font-text: "OpenSansLight";
 
-h1, h2, h3, h4, h5, h6 {
-  font: $font-title;
+h1, h2, h3, h4, h5, h6, a, li {
+  font-family: $font-title;
 }
 p {
-  font: $font-text;
+  font-family: $font-text;
+}
+h2, a, li, ul {
+  font-size: 1.7rem;
+}
+h1 {
+  font-size: 2.3rem;
+}
+h3 {
+  font-size: 1.1rem;
+}
+a {
+  text-decoration: none;
 }

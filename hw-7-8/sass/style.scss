@@ -4,14 +4,138 @@
 
 .container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: stretch;
   min-height: 100vh;
 }
+[class*="wrapper"] {
+  display: flex;
+  justify-content: center;
+}
 header {
-  background-image: url(../img/main-pic.jpg);
-  height: 36.8rem;
+  background: url("../img/bg.png") -65rem 0 no-repeat;
+  height: 32.3rem;
+  width:100%;
+  @include white-shadow;
+  padding-top: 4.9rem;
+}
+.navbar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 7.6rem;
+  margin-bottom: 7.3rem;
+  .logo {
+    height: 2.3rem;
+    width: 9.5rem;
+    background: url("../img/logo.png") no-repeat;
+  }
+}
+.menu {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 2.5rem;
+  .home {
+    display: block;
+    position: relative;
+    border-bottom: .13rem solid;
+    border-color: $light-purple;
+    text-transform: uppercase;
+    @include white-shadow;
+  }
+  .submenu {
+    position: absolute;
+    display: none;
+    left: 7.5rem;
+    li {
+      text-align: left;
+      // padding:
+    }
+  }
+  .home:hover .submenu {
+    display: block;
+  }
+  // &::after {
+  //   height: .13rem;
+  //   width: 2.9rem;
+  //   color: $light-purple;
+  }
+
+article {
+  display: flex;
+  flex-direction: column;
+  h3 {
+    color: $light-purple;
+    text-shadow: .1rem .1rem .2rem gray;
+  }
+  .text {
+  @media #{$mobile} {
+    display: none;
+  }
+  }
+}
+.cell {
+  @media #{$mobile} {
+    display: none;
+  }
+
+}
+.wrapper-arrows {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .arrow1 {
+    width: 1.38rem;
+    height: 2.06rem;
+    background: url("../img/sprite.png") 0 0 no-repeat;
+  }
+  .arrow2 {
+    width: 1.38rem;
+    height: 2.06rem;
+    background: url("../img/sprite.png") -5rem 0 no-repeat;
+  }
+}
+.wrapper-bullets {
+  margin-top: 4.9rem;
+}
+.bullets {
+  height: .68rem;
+  width: .68rem;
+  background-color: white;
+  border-radius: .5rem;
+  border: .13rem solid gray;
+  margin: .2rem;
 }
 .main {
   flex-grow: 1;
+}
+.wrapper-purple {
+  height: 37.37rem;
+  width: 100%;
+  @include purple-gradient;
+  border-top: .1rem solid #322539;
+  border-bottom: .1rem solid #322539;
+  @include white-shadow;
+}
+.item {
+  display: flex;
+  padding: 1.37rem;
+  .icon-tool {
+    background: url('../img/sprite.png') -14.21rem 0 no-repeat;
+    height: 1.56rem;
+    width: 1.56rem;
+    padding: .3rem;
+  }
+  .article {
+    padding: .3rem;
+    a {
+      @include white-shadow;
+      padding: .1rem;
+    }
+    p {
+      line-height: 1.3rem;
+      width: 12.25rem;
+    }
+  }
 }

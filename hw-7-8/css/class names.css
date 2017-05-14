@@ -2,12 +2,18 @@ header img
  navbar
   logo
   menu
-   item g24
-   link
- bullets
+   li a
+   submenu
+    li a
+
+ wrapper-bullets
+  bullets
+
  transparent-container
-  arrows
+
  slider
+  wrapper-arrows
+   arrows
   wrapper
    article
     title1
@@ -16,13 +22,15 @@ header img
    cell
     img
     button
+
 main
  wrapper-purple
   item
    icon
-   title2
-   text
-   link
+   article
+    title2
+    text
+    link
  wrapper
   slider-small
    icon round
