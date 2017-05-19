@@ -1,6 +1,7 @@
 @import "media.scss";
 @import "typography.scss";
 @import "color-map.scss";
+@import "header.scss"
 
 .container {
   display: flex;
@@ -15,115 +16,6 @@
 [class*="box"] {
   display: flex;
   flex-direction: column;
-}
-header {
-  background: url("../img/bg.png") -65rem 0 no-repeat;
-  height: 32.3rem;
-  width:100%;
-  @include white-shadow;
-  padding-top: 4.9rem;
-}
-.navbar {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 7.6rem;
-  margin-bottom: 7.3rem;
-  .logo {
-    height: 2.3rem;
-    width: 9.5rem;
-    background: url("../img/logo.png") no-repeat;
-  }
-}
-.menu {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 2.5rem;
-  .home {
-    display: block;
-    position: relative;
-    border-bottom: .13rem solid;
-    border-color: $light-purple;
-    text-transform: uppercase;
-    @include white-shadow;
-    width: 3.4rem;
-    text-align: center;
-  }
-  .submenu {
-    position: absolute;
-    display: none;
-    left: 0;
-    top: 1rem;
-    width: auto;
-    li {
-      display: block;
-      text-align: left;
-      width: 8rem;
-    }
-    a {
-      display: block;
-      padding: .2rem;
-    }
-  }
-  .home a:hover {
-    display: block;
-  }
-  .home:hover .submenu {
-    display: block;
-  }
-  }
-
-article {
-  display: flex;
-  flex-direction: column;
-  h3 {
-    color: $light-purple;
-    text-shadow: .1rem .1rem .2rem gray;
-  }
-  .text {
-  @media #{$mobile} {
-    display: none;
-  }
-  }
-}
-.cell {
-  @media #{$mobile} {
-    display: none;
-  }
-
-}
-.wrapper-cell {
-  position: relative;
-  top: -2.6rem;
-  z-index: 1;
-}
-.wrapper-arrows {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-  .arrow1 {
-    width: 1.38rem;
-    height: 2.06rem;
-    background: url("../img/sprite.png") 0 0 no-repeat;
-  }
-  .arrow2 {
-    width: 1.38rem;
-    height: 2.06rem;
-    background: url("../img/sprite.png") -5rem 0 no-repeat;
-  }
-}
-.wrapper-bullets {
-  margin-top: 4.9rem;
-}
-.bullets {
-  height: .68rem;
-  width: .68rem;
-  background-color: white;
-  border-radius: .5rem;
-  border: .13rem solid gray;
-  margin: .2rem;
 }
 .main {
   flex-grow: 1;
@@ -155,10 +47,8 @@ article {
   .icon-music {
     background: url('../img/sprite.png') -8rem 0 no-repeat;
   }
-  .article {
+  .article-box {
     padding: .3rem;
-    display: flex;
-    flex-direction: column;
     a {
       @include white-shadow;
       padding: .8rem .1rem;
@@ -185,7 +75,6 @@ article {
     height: .6rem;
     width: 100%;
     background: linear-gradient(#c7c7c7, $light-gray);
-    clear: both;
   }
 }
 .slider-small {
@@ -232,6 +121,7 @@ article {
   }
   article {
     margin-top: 1.25rem;
+    height: 3.13rem;
     .bold {
       font-weight: bold;
     }
@@ -248,4 +138,45 @@ article {
 .icon-round1 {
   @extend .icon-round;
   top: 2.6rem;
+}
+.wrapper-sponsores {
+  flex-wrap: wrap;
+  border-top: .01rem solid $medium-gray;
+  // height: 26.37rem;
+  [class*="sponsor"] {
+    height: 4rem;
+    width: 6.63rem;
+    margin: 1.6rem;
+  }
+  .sponsor1 {
+    background: url('../img/sprite.png') -405px 0 no-repeat;
+  }
+  .sponsor2 {
+    background: url('../img/sprite.png') -538px 0 no-repeat;
+  }
+  .sponsor3 {
+    background: url('../img/sprite.png') -675px 0 no-repeat;
+  }
+  .sponsor4 {
+    background: url('../img/sprite.png') -810px 0 no-repeat;
+  }
+  .sponsor5 {
+    background: url('../img/sprite.png') -932px 0 no-repeat;
+  }
+  .sponsor6 {
+    background: url('../img/sprite.png') -1100px 0 no-repeat;
+  }
+}
+footer {
+  height: 12.5rem;
+  background: url('../img/bg-footer.png') -978px 0 no-repeat;
+  align-items: center;
+  .tm {
+    font-size: .75rem;
+    @include white-shadow;
+    margin-top: 2.6rem;
+    .tm-bold {
+      font-weight: bold;
+    }
+  }
 }

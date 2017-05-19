@@ -1,6 +1,6 @@
 @mixin white-shadow {
   color: white;
-  text-shadow: .05rem .05rem .2rem #505050;
+  text-shadow: .05rem .05rem .2rem $dark-gray;
 }
 
 $light-gray: #f9f9f9;

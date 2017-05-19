@@ -1,0 +1,125 @@
+@import "media.scss";
+@import "typography.scss";
+@import "color-map.scss";
+
+header {
+  background: url("../img/bg.png") -65rem 0 no-repeat;
+  height: 32.3rem;
+  width:100%;
+  @include white-shadow;
+  padding-top: 4.9rem;
+}
+.navbar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 7.6rem;
+  margin-bottom: 7.3rem;
+  .logo {
+    height: 2.3rem;
+    width: 9.5rem;
+    background: url("../img/logo.png") no-repeat;
+  }
+}
+.menu {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 2.5rem;
+  .home {
+    display: block;
+    position: relative;
+    border-bottom: .13rem solid;
+    border-color: $light-purple;
+    text-transform: uppercase;
+    @include white-shadow;
+    width: 3.4rem;
+    text-align: center;
+  }
+  .submenu {
+    position: absolute;
+    display: none;
+    left: 0;
+    top: 1rem;
+    width: auto;
+    li {
+      display: block;
+      text-align: left;
+      width: 8rem;
+    }
+    a {
+      display: block;
+      padding: .2rem;
+    }
+  }
+  .home a:hover {
+    display: block;
+  }
+  .home:hover .submenu {
+    display: block;
+  }
+  }
+.transparent-container {
+  @media #{$mobile}{
+    display: none;
+  }
+  height: 15.38rem;
+  width: 100%;
+  background: $dark-gray;
+  opacity: .5;
+}
+article {
+  h3 {
+    color: $light-purple;
+    text-shadow: .1rem .1rem .2rem gray;
+  }
+  .text {
+  @media #{$mobile}{
+    display: none;
+  }
+  @media #{$mobile-big} {
+    display: none;
+  }
+  @media #{$tablet}{
+
+  }
+  }
+}
+.cell {
+  @media #{$mobile} {
+    display: none;
+  }
+
+}
+.wrapper-cell {
+  position: relative;
+  top: -2.6rem;
+  z-index: 1;
+}
+.wrapper-arrows {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  .arrow1 {
+    width: 1.38rem;
+    height: 2.06rem;
+    background: url("../img/sprite.png") 0 0 no-repeat;
+  }
+  .arrow2 {
+    width: 1.38rem;
+    height: 2.06rem;
+    background: url("../img/sprite.png") -5rem 0 no-repeat;
+  }
+}
+.wrapper-bullets {
+  margin-top: 4.9rem;
+}
+.bullets {
+  height: .68rem;
+  width: .68rem;
+  background-color: white;
+  border-radius: .5rem;
+  border: .13rem solid gray;
+  margin: .2rem;
+}

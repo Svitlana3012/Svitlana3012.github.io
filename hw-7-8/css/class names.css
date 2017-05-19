@@ -31,21 +31,21 @@ main
     title2
     text
     link
- wrapper-light-gray
+ box-light-gray
   slider-small
    icon-round
    article talking-area
     title2
     text
    bullets
-  wrapper-updates
-   title2
+  box-updates
+   title1
    article
     icon-round
     text-bold
     text
    link
- wrapper
+ wrapper-sponsores
   img
   link
  wrapper-medium-gray
@@ -61,4 +61,4 @@ navbar
  menu
   item
   link
- all-rights
+ tm
