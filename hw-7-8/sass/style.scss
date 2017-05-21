@@ -48,7 +48,8 @@
     background: url('../img/sprite.png') -8rem 0 no-repeat;
   }
   .article-box {
-    padding: .3rem;
+    padding: .7rem;
+    width: 100%;
     a {
       @include white-shadow;
       padding: .8rem .1rem;
@@ -59,13 +60,13 @@
     }
     p {
       line-height: 1.3rem;
-      width: 12.25rem;
+      width: 100%;
       padding-top: .3rem;
     }
   }
 }
 .box-light-gray {
-  height: 75.56rem;
+  height: 74rem;
   width: 100%;
   background: $light-gray;
   border-top: .01rem solid white;
@@ -81,15 +82,21 @@
   .talking-area {
     position: relative;
     height: 14rem;
-    width: 11rem;
+    width: 70%;
     background: white;
     border-bottom: .01rem solid #efefef;
     padding: 1.75rem 2.5rem 2rem 2.06rem;
     margin: 2.5rem;
     p {
-      line-height: 1.3rem;
-      width: 12.25rem;
+      line-height: 1.5rem;
+      width: 100%;
       padding-top: .3rem;
+    }
+  }
+  .title {
+    @media #{$mobile} {
+      display: flex;
+      flex-direction: row;
     }
   }
   .dark-gray {
@@ -99,11 +106,14 @@
   .light-purple {
     text-transform: uppercase;
     color: $light-purple;
+    @media #{$mobile} {
+      padding-left: .5rem;
+    }
   }
 }
 .icon-round {
   position: relative;
-  z-index: 1;
+  z-index: 3;
   top: 7rem;
   left: 1.25rem;
   height: 3rem;
@@ -116,12 +126,14 @@
 }
 .box-updates {
   margin-top: 3.06rem;
+  padding-left: 3.75rem;
   h1 {
     margin-left: 1.25rem;
   }
   article {
     margin-top: 1.25rem;
     height: 3.13rem;
+    position: relative;
     .bold {
       font-weight: bold;
     }
@@ -142,11 +154,12 @@
 .wrapper-sponsores {
   flex-wrap: wrap;
   border-top: .01rem solid $medium-gray;
-  // height: 26.37rem;
+  height: 14.5rem;
+  padding: 4.1rem;
   [class*="sponsor"] {
     height: 4rem;
     width: 6.63rem;
-    margin: 1.6rem;
+    margin: .3rem;
   }
   .sponsor1 {
     background: url('../img/sprite.png') -405px 0 no-repeat;
@@ -167,10 +180,42 @@
     background: url('../img/sprite.png') -1100px 0 no-repeat;
   }
 }
+.box-medium-gray {
+  display: none;
+  @media #{$mobile} {
+    display: block;
+    display: flex;
+    justify-content: space-around;
+    height: 41.7rem;
+    width: 100%;
+    background: $medium-gray;
+    p {
+      line-height: 1.3rem;
+      width: 100%;
+      padding-top: .3rem;
+    }
+  }
+}
 footer {
   height: 12.5rem;
   background: url('../img/bg-footer.png') -978px 0 no-repeat;
   align-items: center;
+  justify-content: center;
+  .menu-footer {
+    display: none;
+    @media #{$mobile} {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    li {
+      text-transform: uppercase;
+      @include white-shadow;
+      width: auto;
+      text-align: center;
+      font-size: 1.2rem;
+    }
+  }
+}
   .tm {
     font-size: .75rem;
     @include white-shadow;

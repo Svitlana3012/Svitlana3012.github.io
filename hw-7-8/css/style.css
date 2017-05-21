@@ -69,46 +69,76 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 7.6rem;
-  margin-bottom: 7.3rem;
+  height: 21rem;
 }
 
 .navbar .logo {
   height: 2.3rem;
   width: 9.5rem;
   background: url("../img/logo.png") no-repeat;
+  margin-bottom: 2.5rem;
 }
 
 .menu {
   display: flex;
-  justify-content: space-between;
-  padding-top: 2.5rem;
+  justify-content: center;
+  height: 16.1rem;
+  width: 15.3rem;
+}
+
+.menu::before {
+  content: '';
+  position: absolute;
+  margin-top: .01rem;
+  width: .13rem;
+  height: .01rem;
+  color: #edbfff;
+}
+
+.menu:hover {
+  border: 0.1rem solid #2b2231;
+  border-radius: 1rem;
+  background: #403348;
+  opacity: .9;
+  z-index: 5;
 }
 
 .menu .home {
   display: block;
   position: relative;
-  border-bottom: .13rem solid;
-  border-color: #edbfff;
   text-transform: uppercase;
   color: white;
   text-shadow: 0.05rem 0.05rem 0.2rem #454545;
   width: 3.4rem;
   text-align: center;
+  margin: .7rem 0;
 }
 
 .menu .submenu {
   position: absolute;
   display: none;
-  left: 0;
-  top: 1rem;
+  top: 1.9rem;
   width: auto;
+  left: -6rem;
+  padding: .3rem 0;
 }
 
 .menu .submenu li {
   display: block;
-  text-align: left;
-  width: 8rem;
+  text-align: center;
+  width: 15.3rem;
+  padding: .2rem 0;
+  border-top: .01rem solid #503d58;
+  border-bottom: 0.01rem solid #2b2231;
+}
+
+.menu .submenu li:hover {
+  background: #2b2231;
+  border-bottom: 0.01rem solid #edbfff;
+}
+
+.menu .submenu li:last-child {
+  border-bottom: none;
 }
 
 .menu .submenu a {
@@ -126,18 +156,18 @@ header {
 
 .transparent-container {
   display: none;
-  position: absolute;
-  top: 14rem;
-  height: 15.38rem;
-  width: 100%;
-  background: #454545;
-  opacity: .3;
-  z-index: 1;
 }
 
 @media (min-width: 480px) {
   .transparent-container {
     display: block;
+    position: absolute;
+    top: 14rem;
+    height: 15.38rem;
+    width: 100%;
+    background: #454545;
+    opacity: .3;
+    z-index: 1;
   }
 }
 
@@ -157,6 +187,7 @@ article .text {
 @media (min-width: 768px) {
   article .text {
     display: block;
+    width: 16.9rem;
   }
 }
 
@@ -168,14 +199,14 @@ article .text {
   .cell {
     display: block;
     position: relative;
-    top: -6rem;
+    top: -7rem;
     z-index: 1;
   }
 }
 
 .wrapper-cell {
   position: relative;
-  top: -2.6rem;
+  top: -8rem;
 }
 
 .arrows {
@@ -184,6 +215,7 @@ article .text {
   justify-content: space-between;
   position: relative;
   z-index: 1;
+  top: -5.5rem;
 }
 
 .arrows .arrow1 {
@@ -200,6 +232,12 @@ article .text {
 
 .wrapper-bullets {
   margin-top: 4.9rem;
+}
+
+@media (min-width: 480px) {
+  .wrapper-bullets {
+    margin-top: -11rem;
+  }
 }
 
 .bullets {
@@ -322,46 +360,76 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 7.6rem;
-  margin-bottom: 7.3rem;
+  height: 21rem;
 }
 
 .navbar .logo {
   height: 2.3rem;
   width: 9.5rem;
   background: url("../img/logo.png") no-repeat;
+  margin-bottom: 2.5rem;
 }
 
 .menu {
   display: flex;
-  justify-content: space-between;
-  padding-top: 2.5rem;
+  justify-content: center;
+  height: 16.1rem;
+  width: 15.3rem;
+}
+
+.menu::before {
+  content: '';
+  position: absolute;
+  margin-top: .01rem;
+  width: .13rem;
+  height: .01rem;
+  color: #edbfff;
+}
+
+.menu:hover {
+  border: 0.1rem solid #2b2231;
+  border-radius: 1rem;
+  background: #403348;
+  opacity: .9;
+  z-index: 5;
 }
 
 .menu .home {
   display: block;
   position: relative;
-  border-bottom: .13rem solid;
-  border-color: #edbfff;
   text-transform: uppercase;
   color: white;
   text-shadow: 0.05rem 0.05rem 0.2rem #454545;
   width: 3.4rem;
   text-align: center;
+  margin: .7rem 0;
 }
 
 .menu .submenu {
   position: absolute;
   display: none;
-  left: 0;
-  top: 1rem;
+  top: 1.9rem;
   width: auto;
+  left: -6rem;
+  padding: .3rem 0;
 }
 
 .menu .submenu li {
   display: block;
-  text-align: left;
-  width: 8rem;
+  text-align: center;
+  width: 15.3rem;
+  padding: .2rem 0;
+  border-top: .01rem solid #503d58;
+  border-bottom: 0.01rem solid #2b2231;
+}
+
+.menu .submenu li:hover {
+  background: #2b2231;
+  border-bottom: 0.01rem solid #edbfff;
+}
+
+.menu .submenu li:last-child {
+  border-bottom: none;
 }
 
 .menu .submenu a {
@@ -379,18 +447,18 @@ header {
 
 .transparent-container {
   display: none;
-  position: absolute;
-  top: 14rem;
-  height: 15.38rem;
-  width: 100%;
-  background: #454545;
-  opacity: .3;
-  z-index: 1;
 }
 
 @media (min-width: 480px) {
   .transparent-container {
     display: block;
+    position: absolute;
+    top: 14rem;
+    height: 15.38rem;
+    width: 100%;
+    background: #454545;
+    opacity: .3;
+    z-index: 1;
   }
 }
 
@@ -410,6 +478,7 @@ article .text {
 @media (min-width: 768px) {
   article .text {
     display: block;
+    width: 16.9rem;
   }
 }
 
@@ -421,14 +490,14 @@ article .text {
   .cell {
     display: block;
     position: relative;
-    top: -6rem;
+    top: -7rem;
     z-index: 1;
   }
 }
 
 .wrapper-cell {
   position: relative;
-  top: -2.6rem;
+  top: -8rem;
 }
 
 .arrows {
@@ -437,6 +506,7 @@ article .text {
   justify-content: space-between;
   position: relative;
   z-index: 1;
+  top: -5.5rem;
 }
 
 .arrows .arrow1 {
@@ -453,6 +523,12 @@ article .text {
 
 .wrapper-bullets {
   margin-top: 4.9rem;
+}
+
+@media (min-width: 480px) {
+  .wrapper-bullets {
+    margin-top: -11rem;
+  }
 }
 
 .bullets {
@@ -521,7 +597,8 @@ article .text {
 }
 
 .item .article-box {
-  padding: .3rem;
+  padding: .7rem;
+  width: 100%;
 }
 
 .item .article-box a {
@@ -537,12 +614,12 @@ article .text {
 
 .item .article-box p {
   line-height: 1.3rem;
-  width: 12.25rem;
+  width: 100%;
   padding-top: .3rem;
 }
 
 .box-light-gray {
-  height: 75.56rem;
+  height: 74rem;
   width: 100%;
   background: #f9f9f9;
   border-top: .01rem solid white;
@@ -559,7 +636,7 @@ article .text {
 .slider-small .talking-area {
   position: relative;
   height: 14rem;
-  width: 11rem;
+  width: 70%;
   background: white;
   border-bottom: .01rem solid #efefef;
   padding: 1.75rem 2.5rem 2rem 2.06rem;
@@ -567,9 +644,16 @@ article .text {
 }
 
 .slider-small .talking-area p {
-  line-height: 1.3rem;
-  width: 12.25rem;
+  line-height: 1.5rem;
+  width: 100%;
   padding-top: .3rem;
+}
+
+@media (min-width: 480px) {
+  .slider-small .title {
+    display: flex;
+    flex-direction: row;
+  }
 }
 
 .slider-small .dark-gray {
@@ -582,9 +666,15 @@ article .text {
   color: #edbfff;
 }
 
+@media (min-width: 480px) {
+  .slider-small .light-purple {
+    padding-left: .5rem;
+  }
+}
+
 .icon-round, .icon-round1 {
   position: relative;
-  z-index: 1;
+  z-index: 3;
   top: 7rem;
   left: 1.25rem;
   height: 3rem;
@@ -599,6 +689,7 @@ article .text {
 
 .box-updates {
   margin-top: 3.06rem;
+  padding-left: 3.75rem;
 }
 
 .box-updates h1 {
@@ -608,6 +699,7 @@ article .text {
 .box-updates article {
   margin-top: 1.25rem;
   height: 3.13rem;
+  position: relative;
 }
 
 .box-updates article .bold {
@@ -631,12 +723,14 @@ article .text {
 .wrapper-sponsores {
   flex-wrap: wrap;
   border-top: 0.01rem solid #ececec;
+  height: 14.5rem;
+  padding: 4.1rem;
 }
 
 .wrapper-sponsores [class*="sponsor"] {
   height: 4rem;
   width: 6.63rem;
-  margin: 1.6rem;
+  margin: .3rem;
 }
 
 .wrapper-sponsores .sponsor1 {
@@ -663,10 +757,51 @@ article .text {
   background: url("../img/sprite.png") -1100px 0 no-repeat;
 }
 
+.box-medium-gray {
+  display: none;
+}
+
+@media (min-width: 480px) {
+  .box-medium-gray {
+    display: block;
+    display: flex;
+    justify-content: space-around;
+    height: 41.7rem;
+    width: 100%;
+    background: #ececec;
+  }
+  .box-medium-gray p {
+    line-height: 1.3rem;
+    width: 100%;
+    padding-top: .3rem;
+  }
+}
+
 footer {
   height: 12.5rem;
   background: url("../img/bg-footer.png") -978px 0 no-repeat;
   align-items: center;
+  justify-content: center;
+}
+
+footer .menu-footer {
+  display: none;
+}
+
+@media (min-width: 480px) {
+  footer .menu-footer {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+  }
+  footer .menu-footer li {
+    text-transform: uppercase;
+    color: white;
+    text-shadow: 0.05rem 0.05rem 0.2rem #454545;
+    width: auto;
+    text-align: center;
+    font-size: 1.2rem;
+  }
 }
 
 footer .tm {
