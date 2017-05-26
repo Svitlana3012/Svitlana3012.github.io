@@ -1,21 +1,17 @@
-(function () {
-  'use strict';
+  (function() {
+    'use strict';
+
   // task 1
   function calculate(a, b) {
     var result = a;
-
-    if (b >= 0) {
     for (var i = 1; i < b; i++) {
-      result *= a;
+    result *= a;
     }
-  return result;
-
-  } else {
-    for (var j = 1; j < b; j++) {
-      result *= a;
+    if (b >= 0) {
+      return result;
+    } else {
+      return 1 / result;
     }
-  return 1 / result;
-}
   }
 
   var num = prompt('Введите число для просчета');
@@ -31,32 +27,34 @@
         alert('Значение должно быть ЧИСЛОВЫМ');
         pow = prompt('Введите значение степени для просчета');
       }
-
     } else {
        var result = calculate(+num, +pow);
     }
   console.log('result is: ', result);
-//
+
 //task 2
   var arr = [];
   for (var i = 0; i < 5; i++) {
     arr [i] = prompt('Введите Ваше имя');
   }
+  console.log('arr=', arr);
 
   var name = prompt('Ваше имя пользователя');
 
-  for (var j = 0; j < 5; j++) {
-  if (name == arr [i]) {
-    alert(name + ',Вы успешно вошли');
-    break;
-  } else {
-    alert('Попробуйте еще раз');
-    break;
+  function compare(arr, name) {
+    var user = 'Такого пользователя нет';
+    for (var i = 0; i<arr.length; i++) {
+      if (name === arr[i]) {
+         user = name + ', Вы успешно вошли';
+         break;
+      }
   }
-}
-  console.log('array', arr);
+  alert (user);
+  }
+  compare (arr, name);
+  console.log('name', name);
 
-  //task 3
+  // task 3
   var str = prompt('Ведите слово');
   var arrow = str.split('');
   // var newArrow = arrow.sort()
