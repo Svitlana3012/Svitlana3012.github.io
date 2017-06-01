@@ -35,6 +35,7 @@
   ];
 
   var questions = document.createDocumentFragment();
+  var answers = [];
 
 
   for (var i = 0, max = data.length; i < max; i++) {
@@ -43,11 +44,20 @@
     questions.appendChild(question);
 
     for (var a = 0, length = data[i].answerVariant.length; a < length; a++) {
+      var label = document.createElement('label');
+      // label.setAttribute('label id', '(data[i].questionNumber, data[i].answerVariant)');
+      label.appendChild(document.createTextNode(data[i].answerVariant[a]));
       var answer = document.createElement('input');
       answer.setAttribute('type', 'checkbox');
-      answer.innerHTML = data[i].answerVariant[a];
-      answer.appendChild(document.createTextNode(data[i].answerVariant[a]));
-      question.appendChild(answer);
+      label.appendChild(answer);
+      question.appendChild(label);
+      answers.appendChild(answer);
+
+      for (var j = 0, max1 = answers.length; j < max1; j++) {
+        if (answer [j].cheked) {
+          console.log(question [i], answer[j]);
+        }
+      }
     }
   }
 
