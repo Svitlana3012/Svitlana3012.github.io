@@ -43,7 +43,9 @@
     questions.appendChild(question);
 
     for (var a = 0, length = data[i].answerVariant.length; a < length; a++) {
-      var answer = document.createElement('li');
+      var answer = document.createElement('input');
+      answer.setAttribute('type', 'checkbox');
+      answer.innerHTML = data[i].answerVariant[a];
       answer.appendChild(document.createTextNode(data[i].answerVariant[a]));
       question.appendChild(answer);
     }

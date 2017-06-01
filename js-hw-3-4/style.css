@@ -20,13 +20,14 @@
 ul {
   margin: 10px 30px;
   font-size: 20px;
+  display: flex;;
+  flex-direction: column;
 }
-li {
+input {
   margin: 5px 30px;
   font-size: 16px;
-  list-style: none;
 }
-li::before {
+/*li::before {
 content: "";
 display: inline-block;
 width: 5px;
@@ -37,7 +38,7 @@ left: 0;
 position: absolute;
 background-color: #accddf;
 border: 1px solid #10144e;
-}
+}*/
 .check {
   display: block;
   margin: 45px 0;
