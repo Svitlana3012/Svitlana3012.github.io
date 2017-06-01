@@ -6,8 +6,8 @@
   margin: 10px 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: stretch;
+  justify-content: space-between;
+  align-items: center;
 }
 .title {
   margin: 15px 0;
@@ -15,19 +15,22 @@
 
 }
 .wrapper {
-  margin: 70px 150px;
+  margin: 30px 150px;
+  align-self: flex-start;
 }
 ul {
-  margin: 10px 30px;
+  margin: 20px 30px;
   font-size: 20px;
   display: flex;;
   flex-direction: column;
 }
 input {
   margin: 5px 30px;
+}
+label {
   font-size: 16px;
 }
-/*li::before {
+/*label::before {
 content: "";
 display: inline-block;
 width: 5px;
@@ -45,6 +48,6 @@ border: 1px solid #10144e;
   width: 250px;
   height: 50px;
   background-color: #accddf;
-  border: 1px solid #10144e;
+  border: 2px solid #10144e;
   font-size: 16px;
 }

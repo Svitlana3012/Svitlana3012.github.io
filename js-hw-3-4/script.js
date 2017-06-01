@@ -45,19 +45,21 @@
 
     for (var a = 0, length = data[i].answerVariant.length; a < length; a++) {
       var label = document.createElement('label');
-      // label.setAttribute('label id', '(data[i].questionNumber, data[i].answerVariant)');
+      label.setAttribute('id', data[i].questionNumber + data[i].answerVariant[a]);
       label.appendChild(document.createTextNode(data[i].answerVariant[a]));
+
       var answer = document.createElement('input');
       answer.setAttribute('type', 'checkbox');
-      label.appendChild(answer);
-      question.appendChild(label);
-      answers.appendChild(answer);
 
-      for (var j = 0, max1 = answers.length; j < max1; j++) {
-        if (answer [j].cheked) {
-          console.log(question [i], answer[j]);
-        }
-      }
+      label.insertBefore(answer, label.firstChild);
+      question.appendChild(label);
+      // answers.appendChild(answer);
+      // 
+      // for (var j = 0, max1 = answers.length; j < max1; j++) {
+      //   if (answer [j].cheked) {
+      //     console.log(question [i], answer[j]);
+      //   }
+      // }
     }
   }
 
