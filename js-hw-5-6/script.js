@@ -35,26 +35,36 @@ function createNode(type, cls, attributes, str) {
 
 
   var elements = {};
+  var startBtn = 0;
+  var clearBtn = 0;
   var createLayout = function() {
-      var container = createNode('div', null, null, null);
-      container.style.border = '1px solid #ccc';
+      var container = createNode('div', 'container', null, null);
 
-      var startBtn = createNode('button', 'start', null, 'START'),
+      elements.timeField = createNode('p', 'timeField', null, '00 : 00 : 00 : 000');
+      startBtn = createNode('button', 'start', null, 'START');
+      startBtn.style.background = '#2eb34b';
       clearBtn = createNode('button', 'clear', null, 'CLEAR');
-      elements.timeField = createNode('p', 'timeField', null, '0');
-      elements.timeField.style.fontSize = '3rem';
+      clearBtn.style.background = '#c62222';
 
-      startBtn.addEventListener('click', start);
-      // startBtn.addEventListener('click', pause);
-      // startBtn.addEventListener('click', start);
-      clearBtn.addEventListener('click', pause);
-
-      container.append(startBtn, clearBtn, elements.timeField);
+      container.append(elements.timeField, startBtn, clearBtn);
 
       return container;
     };
 
     root.appendChild(createLayout());
+
+    startBtn.addEventListener('click', function() {
+      if (startBtn.textContent === 'PAUSE') {
+        pause();
+      }
+      else {
+        start();
+      }
+    });
+
+
+    clearBtn.addEventListener('click', clear);
+
 
     var deltaTime = 0;
     var startTime = Date.now();
@@ -63,6 +73,8 @@ function createNode(type, cls, attributes, str) {
     var min = 0;
     var hour = 0;
     var msec = 0;
+    var savedTime = 0;
+    // var isActive = false;
 
     function updateTime() {
       deltaTime = Date.now() - startTime;
@@ -70,38 +82,54 @@ function createNode(type, cls, attributes, str) {
       min = Math.floor(sec/60);
       hour = Math.floor(min/60);
       msec = deltaTime - sec*1000;
+      if(min<10){
+      min = '0' + min;
+      }
+      if(sec<10){
+      sec = '0' + sec;
+      }
       console.log(hour.toString() + ':' + min.toString() + ':' + sec.toString() + ':' + msec.toString());
 
-      // updateHTML();
+      updateHTML();
     }
 
-    // function updateHTML() {
-    //   elements.timeField.appendChild(hour.toString() + ':' + min.toString() + ':' + sec.toString() + ':' + msec.toString())
-    // }
+    function updateHTML() {
+      elements.timeField.innerHTML = '0' + hour + ' : ' + min + ' : ' + sec + ' : ' + msec;
+    }
 
     function changeNamePause() {
       var el = document.querySelector('.start');
       el.textContent = 'PAUSE';
+      startBtn.style.background = '#1e14de';
       return el;
     }
-    // function changeNameContinue() {
-    //   var el = document.querySelector('.start');
-    //   el.textContent = 'CONTINUE';
-    //   return el;
-    // }
+    function changeNameContinue() {
+      var el = document.querySelector('.start');
+      el.textContent = 'CONTINUE';
+      startBtn.style.background = '#2eb34b';
+      return el;
+    }
+    function changeNameStart() {
+      var el = document.querySelector('.start');
+      el.textContent = 'START';
+      return el;
+    }
+
+    function pause() {
+      clearInterval(intervalID);
+      savedTime += deltaTime;
+      // continueTime = savedTime + deltaTime;
+      changeNameContinue();
+    }
     function start() {
       startTime = Date.now();
       intervalID = setInterval(updateTime, 1);
       changeNamePause();
     }
-
-    function pause() {
+    function clear() {
       clearInterval(intervalID);
-      // changeNameContinue();
+      elements.timeField.innerHTML = '00 : 00 : 00 : 000';
+      changeNameStart();
     }
-
-    // function pause() {
-    //
-    // }
 
 })();
