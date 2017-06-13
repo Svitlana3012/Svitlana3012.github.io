@@ -74,6 +74,7 @@ function createNode(type, cls, attributes, str) {
     var hour = 0;
     var msec = 0;
     var savedTime = 0;
+    var continueTime = 0;
     // var isActive = false;
 
     function updateTime() {
@@ -112,17 +113,18 @@ function createNode(type, cls, attributes, str) {
     function changeNameStart() {
       var el = document.querySelector('.start');
       el.textContent = 'START';
+      startBtn.style.background = '#2eb34b';
       return el;
     }
 
     function pause() {
       clearInterval(intervalID);
       savedTime += deltaTime;
-      // continueTime = savedTime + deltaTime;
       changeNameContinue();
     }
     function start() {
-      startTime = Date.now();
+      continueTime = savedTime + deltaTime;
+      // startTime = Date.now();
       intervalID = setInterval(updateTime, 1);
       changeNamePause();
     }
