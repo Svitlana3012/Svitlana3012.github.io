@@ -49,11 +49,11 @@ function createNode(type, cls, attributes, str) {
       container.append(elements.timeField, startBtn, clearBtn);
 
       return container;
-    };
+  };
 
-    root.appendChild(createLayout());
+  root.appendChild(createLayout());
 
-    startBtn.addEventListener('click', function() {
+  startBtn.addEventListener('click', function() {
       if (startBtn.textContent === 'PAUSE') {
         pause();
       }
@@ -62,39 +62,43 @@ function createNode(type, cls, attributes, str) {
       }
     });
 
+  clearBtn.addEventListener('click', clear);
 
-    clearBtn.addEventListener('click', clear);
-
-
-    var deltaTime = 0;
-    var startTime = Date.now();
-    var intervalID = 0;
-    var sec = 0;
-    var min = 0;
-    var hour = 0;
-    var msec = 0;
-    var savedTime = 0;
-    var continueTime = 0;
-    // var isActive = false;
+  var startTime = 0;
+  var deltaTime = 0;
+  var intervalID = 0;
+  var sec = 0;
+  var min = 0;
+  var hour = 0;
+  var msec = 0;
+  var savedTime = 0;
+  var continueTime = 0;
+  var time = 0;
 
     function updateTime() {
       deltaTime = Date.now() - startTime;
-      sec = Math.floor(deltaTime/1000);
-      min = Math.floor(sec/60);
-      hour = Math.floor(min/60);
-      msec = deltaTime - sec*1000;
-      if(min<10){
-      min = '0' + min;
-      }
-      if(sec<10){
-      sec = '0' + sec;
-      }
-      console.log(hour.toString() + ':' + min.toString() + ':' + sec.toString() + ':' + msec.toString());
-
       updateHTML();
     }
 
     function updateHTML() {
+      time = new Date(deltaTime);
+      sec = time.getSeconds();
+      min = time.getMinutes();
+      hour = time.getUTCHours();
+      msec = time.getMilliseconds();
+      if(min<10){
+        min = '0' + min;
+      }
+      if(sec<10){
+        sec = '0' + sec;
+      }
+      if (msec>10 && msec<100) {
+        msec = '0' + msec;
+      }
+      if (msec<10) {
+        msec = '00' + msec
+      }
+      console.log(hour.toString() + ':' + min.toString() + ':' + sec.toString() + ':' + msec.toString());
       elements.timeField.innerHTML = '0' + hour + ' : ' + min + ' : ' + sec + ' : ' + msec;
     }
 
@@ -119,17 +123,18 @@ function createNode(type, cls, attributes, str) {
 
     function pause() {
       clearInterval(intervalID);
-      savedTime += deltaTime;
+      // savedTime += deltaTime;
       changeNameContinue();
     }
     function start() {
-      continueTime = savedTime + deltaTime;
-      // startTime = Date.now();
+      startTime = Date.now() - deltaTime;
+      // continueTime = savedTime + deltaTime;
       intervalID = setInterval(updateTime, 1);
       changeNamePause();
     }
     function clear() {
       clearInterval(intervalID);
+      deltaTime = 0;
       elements.timeField.innerHTML = '00 : 00 : 00 : 000';
       changeNameStart();
     }
