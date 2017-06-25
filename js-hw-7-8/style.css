@@ -1,0 +1,39 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+#tabs {
+  border: 1px solid gray;
+  border-radius: 5px;
+  margin: 2rem;
+  width: 35rem;
+}
+ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 0.4rem;
+  width: 35rem;
+  height: 2.2rem;
+  background-color: #eff1ea;
+}
+li {
+  display: grid;
+  justify-self: start;
+  border: 1px solid gray;
+  border-radius: 5px 5px 0 0;
+  list-style: none;
+  width: 10rem;
+  background-color: #cbc7c7;
+}
+a {
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  line-height: 2rem;
+}
+.text {
+  padding: 0.3rem;
+}
+.link_active {
+  background-color: #3536a7;
+}
