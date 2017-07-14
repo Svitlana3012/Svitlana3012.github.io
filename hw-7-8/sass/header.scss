@@ -19,6 +19,10 @@ header {
   @media #{$mobile} {
     height: 34.37rem;
   }
+  @media #{$tablet} {
+    background: url("../img/bg.png") -50rem 0 no-repeat;
+    padding-top: 4rem;
+  }
 }
 .navbar {
   display: flex;
@@ -26,6 +30,15 @@ header {
   justify-content: center;
   align-items: center;
   height: 21rem;
+  @media #{$tablet} {
+    display: flex;
+    align-items: flex-start;
+    padding: 0 1.25rem;
+  }
+  @media #{$desktop} {
+    flex-direction: row;
+    justify-content: space-between;
+  }
   .logo {
     height: 2.3rem;
     width: 9.5rem;
@@ -33,18 +46,14 @@ header {
     margin-bottom: 2.5rem;
   }
 }
-.menu {
-  display: flex;
-  justify-content: center;
+.wrapper-menu {
   height: 16.1rem;
   width: 15.3rem;
-  &::before {
-    content: '';
-    position: absolute;
-    margin-top: .01rem;
-    width: .13rem;
-    height: .01rem;
-    color: $light-purple;
+  @media #{$tablet} {
+    width: 80%;
+  }
+  @media #{$desktop} {
+    width: 70%;
   }
   &:hover {
     border: .1rem solid $dark-purple;
@@ -54,21 +63,36 @@ header {
     z-index: 5;
   }
   .home {
-    display: block;
+    display: inline-block;
     position: relative;
     text-transform: uppercase;
     @include white-shadow;
-    width: 3.4rem;
+    width: 2.94rem;
     text-align: center;
     margin: .7rem 0;
-  }
+    @media #{$tablet} {
+      width: 100%;
+      text-align: left;
+    }
+    }
   .submenu {
     position: absolute;
     display: none;
     top: 1.9rem;
     width: auto;
     left: -6rem;
-    padding: .3rem 0;
+    padding: 0.3rem 0;
+    @media #{$tablet} {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      top: -0.9rem;
+      left: 6rem;
+    }
+    @media #{$desktop} {
+      width: 85%;
+    }
     li {
       display: block;
       text-align: center;
@@ -76,6 +100,10 @@ header {
       padding: .2rem 0;
       border-top: .01rem solid #503d58;
       border-bottom: .01rem solid $dark-purple;
+      @media #{$tablet} {
+        border: none;
+        width: auto;
+      }
       &:hover {
         background: $dark-purple;
         border-bottom: .01rem solid $light-purple;
@@ -111,31 +139,54 @@ header {
 }
 article {
     z-index: 1;
+    width: 13rem;
+    align-items: center;
+    @media #{$mobile} {
+      align-items: flex-start;
+    }
+    @media #{$tablet} {
+      width: 15rem;
+      overflow: hidden;
+      height: 9rem;
+    }
+    @media #{$desktop} {
+      width: 60%;
+    }
   h3 {
     color: $light-purple;
     text-shadow: .1rem .1rem .2rem gray;
   }
   .text {
     display: none;
-  @media #{$tablet}{
+  @media #{$tablet} {
     display: block;
-    width: 16.9rem;
+    line-height: 1.5rem;
   }
   }
 }
-.cell {
+.cell-phone {
   display: none;
   @media #{$mobile} {
     display: block;
     position: relative;
     top: -7rem;
     z-index: 1;
-
+  }
+  @media #{$tablet} {
+    top: -6rem;
+  }
+  @media #{$desktop} {
+    top: -4rem;
   }
 }
-.wrapper-cell {
+.cell {
+  display: flex;
+  justify-content: center;
   position: relative;
   top: -8rem;
+  @media #{$tablet} {
+    justify-content: space-around;
+  }
 }
 .arrows {
   display: flex;
@@ -154,9 +205,11 @@ article {
     height: 2.06rem;
     background: url("../img/sprite.png") -5rem 0 no-repeat;
   }
+  @media #{$desktop} {
+    display: none;
+  }
 }
 .wrapper-bullets {
-  margin-top: 4.9rem;
   @media #{$mobile} {
     margin-top: -11rem;
   }
