@@ -26,10 +26,7 @@ for (var i = 0; i < $textInput.length; i++) {
 
 $formButton.on('click', function(event) {
   event.preventDefault();
-
-  for (var i = 0; i < $textInput.length; i++) {
-      $textInput[i].next().show();
-    }
+  $textInput.next().show();
 });
 
 });
