@@ -2,44 +2,34 @@ $(function() {
   'use strict';
 
 var $textInput = $('input'),
-$formWrapper = $('.form-wrapper'),
-$formTooltips = $('.form-tooltips'),
-currentTooltip,
-currentInput;
+$formButton = $('.form-button');
 
-var tooltipCreate = function (id, text) {
+var tooltipCreate = function (text) {
   var tooltip = document.createElement('div');
   tooltip.classList.add('tooltip');
+  tooltip.style.display = 'none';
   tooltip.textContent = text;
-  tooltip.id = id;
 
   return tooltip;
 };
 
-var $tooltipName = $(tooltipCreate('First-name', 'Please provide your firstname'));
-var $tooltipSurname = $(tooltipCreate('Last-name', 'Please provide also your lastname'));
-var $tooltipAddress = $(tooltipCreate('Address', 'Your home or work address'));
+for (var i = 0; i < $textInput.length; i++) {
+    $textInput[i].after(tooltipCreate('Please provide your ' + $textInput[i].name));
+    }
 
-$tooltipName.hide();
-$tooltipSurname.hide();
-$tooltipAddress.hide();
+    $textInput.on('focusin', function() {
+        $(this).next().show();
+    });
+    $textInput.on('focusout', function() {
+        $(this).next().hide();
+    });
 
-$formWrapper.append($formTooltips);
-
-$formTooltips.append($tooltipName, $tooltipSurname, $tooltipAddress);
-
-$textInput.on('focus', function (event) {
+$formButton.on('click', function(event) {
   event.preventDefault();
 
-  currentInput = $(this);
-
-  currentTooltip = currentInput.attr('name');
-  $tooltipName.hide();
-  $tooltipSurname.hide();
-  $tooltipAddress.hide();
-
-  $('#' + currentTooltip).show();
-  console.log($('#' + currentTooltip));
+  for (var i = 0; i < $textInput.length; i++) {
+      $textInput[i].next().show();
+    }
 });
 
 });

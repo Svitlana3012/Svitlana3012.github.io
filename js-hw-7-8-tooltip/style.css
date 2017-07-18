@@ -8,22 +8,21 @@
   flex-direction: column;
 }
 .form-inputs-item {
-  width: 300px;
   display: flex;
-  justify-content: space-between;
   padding: 5px;
+}
+input {
+  margin-left: 10px;
 }
 button {
   margin: 5px;
 }
-.form-tooltips {
-  flex-direction: column;
-}
 .tooltip {
   justify-content: space-between;
   padding: 5px;
-  height: 20px;
-  width: 300px;
+  margin-left: 10px;
+  height: 10px;
   border: 1px solid gray;
   border-radius: 5px;
+  line-height: 10px;
 }
