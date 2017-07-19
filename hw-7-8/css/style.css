@@ -50,6 +50,7 @@ a {
 }
 
 header {
+  max-width: 961px;
   background: url("../img/bg.png") -65rem 0 no-repeat;
   height: 32.3rem;
   width: 100%;
@@ -106,6 +107,16 @@ header {
   width: 15.3rem;
 }
 
+@media (max-width: 767px) and (min-width: 320px) {
+  .wrapper-menu:hover {
+    border: 0.1rem solid #2b2231;
+    border-radius: 1rem;
+    background: #403348;
+    opacity: .9;
+    z-index: 5;
+  }
+}
+
 @media (min-width: 768px) {
   .wrapper-menu {
     width: 80%;
@@ -116,14 +127,6 @@ header {
   .wrapper-menu {
     width: 70%;
   }
-}
-
-.wrapper-menu:hover {
-  border: 0.1rem solid #2b2231;
-  border-radius: 1rem;
-  background: #403348;
-  opacity: .9;
-  z-index: 5;
 }
 
 .wrapper-menu .home {
@@ -186,26 +189,28 @@ header {
   }
 }
 
-.wrapper-menu .submenu li:hover {
-  background: #2b2231;
-  border-bottom: 0.01rem solid #edbfff;
+@media (max-width: 767px) and (min-width: 320px) {
+  .wrapper-menu .submenu li:hover {
+    background: #2b2231;
+    border-bottom: 0.01rem solid #edbfff;
+  }
+  .wrapper-menu .submenu li:last-child {
+    border-bottom: none;
+  }
 }
 
-.wrapper-menu .submenu li:last-child {
-  border-bottom: none;
-}
-
-.wrapper-menu .submenu a {
+.wrapper-menu .submenu li a {
   display: block;
   padding: .2rem;
 }
 
-.wrapper-menu .home a:hover {
-  display: block;
-}
-
-.wrapper-menu .home:hover .submenu {
-  display: block;
+@media (max-width: 767px) and (min-width: 320px) {
+  .wrapper-menu .home a:hover {
+    display: block;
+  }
+  .wrapper-menu .home:hover .submenu {
+    display: block;
+  }
 }
 
 .transparent-container {
@@ -439,6 +444,7 @@ a {
 }
 
 header {
+  max-width: 961px;
   background: url("../img/bg.png") -65rem 0 no-repeat;
   height: 32.3rem;
   width: 100%;
@@ -495,6 +501,16 @@ header {
   width: 15.3rem;
 }
 
+@media (max-width: 767px) and (min-width: 320px) {
+  .wrapper-menu:hover {
+    border: 0.1rem solid #2b2231;
+    border-radius: 1rem;
+    background: #403348;
+    opacity: .9;
+    z-index: 5;
+  }
+}
+
 @media (min-width: 768px) {
   .wrapper-menu {
     width: 80%;
@@ -505,14 +521,6 @@ header {
   .wrapper-menu {
     width: 70%;
   }
-}
-
-.wrapper-menu:hover {
-  border: 0.1rem solid #2b2231;
-  border-radius: 1rem;
-  background: #403348;
-  opacity: .9;
-  z-index: 5;
 }
 
 .wrapper-menu .home {
@@ -575,26 +583,28 @@ header {
   }
 }
 
-.wrapper-menu .submenu li:hover {
-  background: #2b2231;
-  border-bottom: 0.01rem solid #edbfff;
+@media (max-width: 767px) and (min-width: 320px) {
+  .wrapper-menu .submenu li:hover {
+    background: #2b2231;
+    border-bottom: 0.01rem solid #edbfff;
+  }
+  .wrapper-menu .submenu li:last-child {
+    border-bottom: none;
+  }
 }
 
-.wrapper-menu .submenu li:last-child {
-  border-bottom: none;
-}
-
-.wrapper-menu .submenu a {
+.wrapper-menu .submenu li a {
   display: block;
   padding: .2rem;
 }
 
-.wrapper-menu .home a:hover {
-  display: block;
-}
-
-.wrapper-menu .home:hover .submenu {
-  display: block;
+@media (max-width: 767px) and (min-width: 320px) {
+  .wrapper-menu .home a:hover {
+    display: block;
+  }
+  .wrapper-menu .home:hover .submenu {
+    display: block;
+  }
 }
 
 .transparent-container {
@@ -750,6 +760,10 @@ article .text {
   flex-direction: column;
 }
 
+main {
+  max-width: 961px;
+}
+
 .wrapper-purple {
   flex-flow: column wrap;
   background: linear-gradient(#745083, #322539);
@@ -775,6 +789,24 @@ article .text {
   width: 4rem;
   padding: 0.3rem;
   margin: 0.5rem;
+}
+
+@media (max-width: 420px) and (min-width: 330px) {
+  .item [class*="icon"] {
+    width: 3rem;
+  }
+}
+
+@media (max-width: 768px) and (min-width: 421px) {
+  .item [class*="icon"] {
+    width: 2rem;
+  }
+}
+
+@media (max-width: 768px) and (min-width: 570px) {
+  .item [class*="icon"] {
+    width: 1.5rem;
+  }
 }
 
 .item .icon-tool {
@@ -839,6 +871,16 @@ article .text {
   border-bottom: .01rem solid #efefef;
   padding: 1.75rem 1.25rem 2rem 2.06rem;
   margin-left: 1.25rem;
+}
+
+.slider-small .talking-area::after {
+  position: absolute;
+  content: '';
+  display: inline-block;
+  border: 25px solid transparent;
+  border-right: 25px solid green;
+  bottom: -25px;
+  right: 2rem;
 }
 
 @media (min-width: 768px) {
@@ -1045,6 +1087,7 @@ article .text {
 }
 
 footer {
+  max-width: 961px;
   background: url("../img/bg-footer.png") -978px 0 no-repeat;
   align-items: center;
   justify-content: center;
