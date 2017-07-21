@@ -9,9 +9,26 @@
   display: flex;
   flex-direction: column;
 }
-
-header {
+.container {
   max-width: 961px;
+}
+.transparent-container {
+  display: none;
+  @media #{$mobile} {
+    display: block;
+    position: absolute;
+    top: 14rem;
+    height: 15.38rem;
+    width: 100%;
+    background: $dark-gray;
+    opacity: .3;
+    z-index: 1;
+  }
+}
+header {
+  position: relative;
+  display: flex;
+  justify-content: center;
   background: url("../img/bg.png") -65rem 0 no-repeat;
   height: 32.3rem;
   width:100%;
@@ -131,19 +148,7 @@ header {
  }
  }
 }
-.transparent-container {
-  display: none;
-  @media #{$mobile} {
-    display: block;
-    position: absolute;
-    top: 14rem;
-    height: 15.38rem;
-    width: 100%;
-    background: $dark-gray;
-    opacity: .3;
-    z-index: 1;
-  }
-}
+
 article {
     z-index: 1;
     width: 13rem;
