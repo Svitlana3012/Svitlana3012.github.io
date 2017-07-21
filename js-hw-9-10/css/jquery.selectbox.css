@@ -1,75 +1,110 @@
 @CHARSET "UTF-8";
-
-.jquery-selectbox {
+.sbHolder{
+	background-color: #2d2d2d;
+	border: solid 1px #515151;
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	height: 30px;
 	position: relative;
-	height: 16px;
-	border: 1px solid #d2ad63;
-	width: 100px;
-	z-index: 0;
-	float: left;
-	display: inline;
-	margin: 4px 4px 4px 0;
-	font-size: 9px;
-	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
-	color: #444;
-	padding: 0;
-	background-image: url("../img/bg-TextField.gif");
+	width: 200px;
 }
-.jquery-selectbox.selecthover {
-	border-color: #9F7627;
-	background-color: #FFFCDF;
-	background-image: url("../img/bg-TextFieldFocused.gif");
-	z-index: 700;
-}	
-.jquery-selectbox .jquery-selectbox-currentItem {
-	padding: 3px 0px 0px 3px;
-	white-space: nowrap;
+.sbHolder:focus .sbSelector{
+	
+}
+.sbSelector{
 	display: block;
+	height: 30px;
+	left: 0;
+	line-height: 30px;
+	outline: none;
 	overflow: hidden;
-}
-
-.jquery-selectbox .jquery-selectbox-list {
-	display: none;
 	position: absolute;
-	top: 16px;
-	padding: 2px;
-	left: 0px;
-	background: #fffcdf;
-	width: 100px;
-	height: 120px;
-	overflow-x: hidden;
-	overflow-y: auto;
-	z-index: 1000;
-	border: 1px solid #d2ad63;
+	text-indent: 10px;
+	top: 0;
+	width: 170px;
 }
-.jquery-selectbox .jquery-selectbox-moreButton {
-	/*
-	position: absolute;
-	top: 0px;
-	right: 0px;
-	*/
-	float: right;
-	background: url("../img/lay-selectMoreButton.gif");
-	width: 16px;
-	height: 16px;
-	cursor: pointer;
+.sbSelector:link, .sbSelector:visited, .sbSelector:hover{
+	color: #EBB52D;
+	outline: none;
+	text-decoration: none;
 }
-.jquery-selectbox .jquery-selectbox-moreButton.morebuttonhover {
-	background: url("../img/lay-selectMoreButtonHover.gif");
-}
-
-.jquery-selectbox .jquery-selectbox-item.listelementhover {
-	background: #87683d;
-	color: #eee;
-}
-.jquery-selectbox .jquery-selectbox-item {
+.sbToggle{
+	background: url(../img/select-icons.png) 0 -116px no-repeat;
 	display: block;
-	cursor: default;
+	height: 30px;
+	outline: none;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 30px;
 }
-
-/** ERROR classes **/
-form .error .jquery-selectbox {
-	color: #d00;
-	border-color: #d00;
-	background-image: url("../img/bg-TextFieldError.gif");
+.sbToggle:hover{
+	background: url(../img/select-icons.png) 0 -167px no-repeat;
+}
+.sbToggleOpen{
+	background: url(../img/select-icons.png) 0 -16px no-repeat;
+}
+.sbToggleOpen:hover{
+	background: url(../img/select-icons.png) 0 -66px no-repeat;
+}
+.sbHolderDisabled{
+	background-color: #3C3C3C;
+	border: solid 1px #515151;
+}
+.sbHolderDisabled .sbHolder{
+	
+}
+.sbHolderDisabled .sbToggle{
+	
+}
+.sbOptions{
+	background-color: #212121;
+	border: solid 1px #515151;
+	list-style: none;
+	left: -1px;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 30px;
+	width: 200px;
+	z-index: 1;
+	overflow-y: auto;
+}
+.sbOptions li{
+	padding: 0 7px;
+}
+.sbOptions a{
+	border-bottom: dotted 1px #515151;
+	display: block;
+	outline: none;
+	padding: 7px 0 7px 3px;
+}
+.sbOptions a:link, .sbOptions a:visited{
+	color: #ddd;
+	text-decoration: none;
+}
+.sbOptions a:hover,
+.sbOptions a:focus,
+.sbOptions a.sbFocus{
+	color: #EBB52D;
+}
+.sbOptions li.last a{
+	border-bottom: none;
+}
+.sbOptions .sbDisabled{
+	border-bottom: dotted 1px #515151;
+	color: #999;
+	display: block;
+	padding: 7px 0 7px 3px;
+}
+.sbOptions .sbGroup{
+	border-bottom: dotted 1px #515151;
+	color: #EBB52D;
+	display: block;
+	font-weight: bold;
+	padding: 7px 0 7px 3px;
+}
+.sbOptions .sbSub{
+	padding-left: 17px;
 }

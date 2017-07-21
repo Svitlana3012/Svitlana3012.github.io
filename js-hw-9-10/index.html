@@ -1,34 +1,112 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Sunset</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="js/carousel.js"></script>
-  <link rel="stylesheet" href="css/carousel.css">
-  <link rel="stylesheet" href="/css/jquery.selectbox.css">
-  <link rel="stylesheet" href="/css/default.css">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css"/>
+    <link href="css/jquery.selectbox.css" type="text/css" rel="stylesheet" />
+    <title>Домашнее задание №9-10</title>
 </head>
+
 <body>
-  <div class="wrapper">
-      <!-- Carousel -->
-      <div class="jcarousel">
-          <ul>
-              <li><img src="src/img1.jpg" alt=""></li>
-              <li><img src="src/img2.jpg" alt=""></li>
-              <li><img src="src/img3.jpg" alt=""></li>
-              <li><img src="src/img4.jpg" alt=""></li>
-              <li><img src="src/img5.jpg" alt=""></li>
-          </ul>
-      </div>
-      <!-- Controls -->
-      <a class="jcarousel-prev" href="#">Prev</a>
-      <a class="jcarousel-next" href="#">Next</a>
-      <!-- Pagination -->
-      <div class="jcarousel-pagination"></div>
-  </div>
-  <script src="js/script.js"></script>
+<div class="container">
+    <h1>1.  Выпадающее меню </h1>
+    <h2>1.1  Выпадающее меню JQuery</h2>
+    <nav class="qjMenu">
+        <ul class="gjMenu-ul">
+            <li><a href="#">Пункт 1</a></li>
+            <li><a href="#">Пункт 2</a></li>
+            <li><a href="#">Пункт 3</a></li>
+            <li class="open-sub">
+                <a href="#">Пунк 4</a>
+                <ul class="sub-menu">
+                    <li><a href="#">Пункт 4.1</a></li>
+                    <li><a href="#">Пункт 4.2</a></li>
+                    <li><a href="#">Пункт 4.3</a></li>
+                    <li class="open-sub">
+                        <a href="#">Пунк 4.4</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">Пункт 4.4.1</a></li>
+                            <li><a href="#">Пункт 4.4.2</a></li>
+                            <li><a href="#">Пункт 4.4.3</a></li>
+                            <li class="open-sub">
+                                <a href="#">Пунк 4.4.4</a>
+                                <ul class="sub-menu">
+                                    <li><a href="#">Пункт 4.4.4.1</a></li>
+                                    <li><a href="#">Пункт 4.4.4.2</a></li>
+                                    <li><a href="#">Пункт 4.4.4.3</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Пункт 4.4.5</a></li>
+                            <li class="open-sub">
+                                <a href="#">Пункт 4.4.6</a>
+                                <ul class="sub-menu">
+                                    <li><a href="#">Пункт 4.4.6.1</a></li>
+                                    <li><a href="#">Пункт 4.4.6.2</a></li>
+                                    <li><a href="#">Пункт 4.4.6.3</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Пункт 4.5</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Пункт 5</a></li>
+        </ul>
+    </nav>
+    <h1>2. Слайдер</h1>
+    <div class="jcarousel-wrapper">
+       <div class="jcarousel">
+           <ul>
+               <li><img src="img/1.jpg" alt=""/></li>
+               <li><img src="img/2.jpg" alt=""/></li>
+               <li><img src="img/3.jpg" alt=""/></li>
+               <li><img src="img/4.jpg" alt=""/></li>
+               <li><img src="img/5.jpg" alt=""/></li>
+           </ul>
+           <a href="#" class="jcarousel-control-prev inactive" data-jcarouselcontrol="true">‹</a>
+           <a href="#" class="jcarousel-control-next" data-jcarouselcontrol="true">›</a>
+           <p class="jcarousel-pagination" data-jcarouselpagination="true">
+               <a href="#1" class="active">1</a>
+               <a href="#2">2</a>
+               <a href="#3">3</a>
+               <a href="#4">4</a>
+           </p>
+       </div>
+    </div>
+    <h1>3. Нестандартный Select</h1>
+    <select name="country_id" id="country_id" tabindex="1">
+        <option value="">-- Select country --</option>
+        <optgroup label="North America">
+            <option value="1">USA</option>
+            <option value="9">Canada</option>
+        </optgroup>
+        <optgroup label="Europe">
+            <option value="2">France</option>
+            <option value="3">Spain</option>
+            <option value="6">Bulgaria</option>
+            <option value="7" disabled="disabled">Greece</option>
+            <option value="8">Italy</option>
+        </optgroup>
+        <optgroup label="Asia" disabled="disabled">
+            <option value="5">Japan</option>
+            <option value="11">China</option>
+        </optgroup>
+        <option value="4">Brazil</option>
+        <option value="10">South Africa</option>
+    </select>
+    <h1>4. Нестандартный checkbox</h1>
+    <h2>4.1 c помощью JQuery</h2>
+    <span class="niceCheck"><input type="checkbox" name="ch1" /></span>
+    <h2>4.1 c помощью CSS</h2>
+    <input type="checkbox" id="test-check1">
+    <label for="test-check1">Чекбокс 1:</label>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="js/jquery.jcarousel.min.js"></script>
+<script src="js/jquery.checkbox.js"></script>
+
+<script src="js/jquery.color.js"></script>
+<script type="text/javascript" src="js/jquery.selectbox-0.2.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>

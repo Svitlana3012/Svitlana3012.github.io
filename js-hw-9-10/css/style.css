@@ -1,0 +1,245 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    width: 600px;
+    margin:0 auto;
+    margin-bottom:150px;
+}
+
+.jcarousel img{
+    width: 600px;
+    height: 400px;
+}
+h1,h2{
+    display: block;
+    margin: 10px;
+}
+/*3.1*/
+.niceCheck {
+    width: 17px;
+    height: 17px;
+    display: inline-block;
+    cursor: pointer;
+    background: url(../img/checkbox.png);
+}
+
+.niceCheck input {
+    display: none;
+}
+
+
+/*3.2*/
+input[type=checkbox] {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+}
+label {
+    cursor: pointer;
+}
+label:after {
+    content: " ";
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    background: url(../img/checkbox-2.png);
+    position: relative;
+    top: 3px;
+    margin-left: 15px;
+}
+input[type=checkbox]:checked + label:after {
+    background-position: 0 -17px;
+}
+label:hover:after {
+    background-position: 0 -34px;
+}
+input[type=checkbox]:checked + label:hover:after {
+    background-position: 0 -51px;
+}
+
+
+
+/*1*/
+.jcarousel-wrapper {
+    margin: 20px auto;
+    position: relative;
+    border: 10px solid #fff;
+    width: 600px;
+    height: 400px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 0 2px #999;
+    -moz-box-shadow: 0 0 2px #999;
+    box-shadow: 0 0 2px #999;
+}
+
+
+.jcarousel-wrapper .photo-credits {
+    position: absolute;
+    right: 15px;
+    bottom: 0;
+    font-size: 13px;
+    color: #fff;
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.85);
+    opacity: .66;
+}
+
+.jcarousel-wrapper .photo-credits a {
+    color: #fff;
+}
+
+/** Carousel **/
+
+.jcarousel {
+    position: relative;
+    overflow: hidden;
+}
+
+.jcarousel ul {
+    width: 20000em;
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.jcarousel li {
+    float: left;
+}
+
+/** Carousel Controls **/
+
+.jcarousel-control-prev,
+.jcarousel-control-next {
+    position: absolute;
+    top: 200px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    background: #4E443C;
+    color: #fff;
+    text-decoration: none;
+    text-shadow: 0 0 1px #000;
+    font: 24px/27px Arial, sans-serif;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    -webkit-box-shadow: 0 0 2px #999;
+    -moz-box-shadow: 0 0 2px #999;
+    box-shadow: 0 0 2px #999;
+}
+
+.jcarousel-control-prev {
+    left: 0;
+}
+
+.jcarousel-control-next {
+    right: 0;
+}
+
+.jcarousel-control-prev:hover span,
+.jcarousel-control-next:hover span {
+    display: block;
+}
+
+.jcarousel-control-prev.inactive,
+.jcarousel-control-next.inactive {
+    opacity: .5;
+    cursor: default;
+}
+
+/** Carousel Pagination **/
+
+.jcarousel-pagination {
+    position: absolute;
+    bottom: 5px;
+    left: 15px;
+}
+
+.jcarousel-pagination a {
+    text-decoration: none;
+    display: inline-block;
+
+    font-size: 11px;
+    line-height: 14px;
+    min-width: 14px;
+
+    background: #fff;
+    color: #4E443C;
+    border-radius: 14px;
+    padding: 3px;
+    text-align: center;
+    margin-right: 2px;
+    opacity: .75;
+}
+
+.jcarousel-pagination a.active {
+    background: #4E443C;
+    color: #fff;
+    opacity: 1;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.75);
+}
+
+.gjMenu-ul,
+.jsMenu-ul{
+    background: rgb(225,100,100);
+}
+.gjMenu-ul li,
+.jsMenu-ul li{
+    list-style-type: none;
+    display: inline-block;
+    position: relative;
+    padding: 0 10px;
+}
+.gjMenu-ul li a,
+.jsMenu-ul li a{
+    display: block;
+    padding: 20px 10px;
+    text-decoration: none;
+    color: #fff;
+}
+.gjMenu-ul li a:hover,
+.jsMenu-ul li a:hover {
+    /*color: rgb(50, 50, 50);*/
+}
+
+
+.open-sub{
+    background: url(../img/arrow-down.png) no-repeat right center;
+}
+.jsMenu-ul .sub-menu{
+    height: 0;
+    visibility: hidden;
+    display: block !important;
+}
+
+.sub-menu{
+    display: none;
+    background-color: rgb(225,75,75);
+    position: absolute;
+    left: 0;
+    z-index: 20;
+}
+.sub-menu li{
+    border-bottom: solid 1px rgb(200,50,50);
+}
+
+.sub-menu li.open-sub{
+    background: url(../img/arrow-right.png) no-repeat 110px center;
+}
+.gjMenu-ul li li,
+.jsMenu-ul li li {
+    position: relative;
+    width: 100px;
+}
+.gjMenu-ul li li ul,
+.jsMenu-ul li li ul {
+    position: absolute;
+    top: 0;
+    left: 120px;
+    margin: 0;
+    z-index: 21;
+}

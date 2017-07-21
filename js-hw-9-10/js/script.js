@@ -1,4 +1,4 @@
-//Carousel plugin
+// Carousel plugin
 $(function() {
   'use strict';
 
@@ -44,4 +44,11 @@ $('.jcarousel-pagination').jcarouselPagination({
     }
 });
 
+});
+
+//selectbox
+$(function(){
+  'use strict';
+  $("#default-usage-select").selectbox();
+  $("select").selectbox();
 });
