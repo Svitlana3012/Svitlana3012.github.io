@@ -1,5 +1,5 @@
-(function ($) {
-  
+(function($) {
+
   var leftUIEl = $('.carousel-arrow-left'),
     rightUIEl = $('.carousel-arrow-right'),
     elementsList = $('.carousel-list'),
@@ -10,23 +10,31 @@
   var minimumOffset = -((elementsCount - 3) * pixelsOffset);
   var maximumOffset = 0;
 
-  leftUIEl.click(function () {
+  leftUIEl.click(function() {
     if (currentValue !== maximumOffset) {
       currentValue += 225;
-      elementsList.animate({left: currentValue + 'px'}, 500);
+      elementsList.animate({
+        left: currentValue + 'px'
+      }, 500);
     } else {
       currentValue = minimumOffset;
-      elementsList.animate({left: currentValue + 'px'}, 500);
+      elementsList.animate({
+        left: currentValue + 'px'
+      }, 500);
     }
   });
 
-  rightUIEl.click(function () {
-    if (currentValue !== maximumOffset) {
+  rightUIEl.click(function() {
+    if (currentValue !== minimumOffset) {
       currentValue -= 225;
-      elementsList.animate({left: currentValue + 'px'}, 500);
+      elementsList.animate({
+        left: currentValue + 'px'
+      }, 500);
     } else {
-      currentValue = minimumOffset;
-      elementsList.animate({left: currentValue + 'px'}, 500);
+      currentValue = 0;
+      elementsList.animate({
+        left: currentValue + 'px'
+      }, 500);
     }
   });
 

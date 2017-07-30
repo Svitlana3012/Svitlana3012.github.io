@@ -1,7 +1,14 @@
-/** {
+* {
   margin: 0;
   padding: 0;
-}*/
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+[class*="wrapper"] {
+  margin: 30px;
+}
 .carousel-hider {
     width: 650px;
     overflow: hidden;
@@ -33,11 +40,9 @@
     cursor: pointer;
     background-color: grey;
 }
-
 .carousel-arrow-left {
     margin-right: 25px;
 }
-
 .carousel-arrow-right {
     margin-left: 25px;
 }
