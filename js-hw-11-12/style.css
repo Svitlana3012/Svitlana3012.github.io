@@ -46,3 +46,21 @@ body {
 .carousel-arrow-right {
     margin-left: 25px;
 }
+
+.galery {
+  display: flex;
+  flex-wrap: wrap;
+}
+.galery-item {
+  list-style: none;
+  background-color: #bec7b6;
+  border: solid gray 2px;
+  padding: 5px;
+  margin: 10px;
+
+}
+.galery-item-title {
+ font-size: 22px;
+ font-weight: bold;
+ text-align: center;
+}

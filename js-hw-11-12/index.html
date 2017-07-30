@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="style.css">
-  <title>Document</title>
+  <title>Carousel_Galery</title>
 </head>
 
 <body>
@@ -48,8 +48,8 @@
     <h1>Galery LoDash</h1>
     <script type="text/html" id="galery-template">
       <ul class="galery">
-        <% for (var i=0; i<=galeryItems; i++) { %>
-          <li><%-title%><a href=""><img src="<%-content%>" alt="image"></img></a></li>
+        <% for (var i=0; i<data.length; i++) { %>
+          <li class="galery-item"><p class="galery-item-title"><%=data[i].title%></p><a href=""><img src="<%=data[i].content%>" alt="image"></img></a></li>
           <% } %>
         </ul>
       </script>
