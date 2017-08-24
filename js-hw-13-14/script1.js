@@ -122,10 +122,10 @@ console.log('correctAns',correctAnws);
     function result() {
         makePopup();
         if (_.isEqual(userAnswers, correctAnws)) {
-            popupWindow.appendChild(document.createTextNode('ПОЗДРАВЛЯЮ! ВЫ ПРОШЛИ ТЕСТ!'));
+            popupWindow.innerHTML = ('ПОЗДРАВЛЯЮ! ВЫ ПРОШЛИ ТЕСТ!');
         }
         else {
-            popupWindow.appendChild(document.createTextNode('ПОПРОБУЙТЕ ЕЩЕ РАЗ'));
+            popupWindow.innerHTML = ('ПОПРОБУЙТЕ ЕЩЕ РАЗ');
         };
     };
 
