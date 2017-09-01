@@ -48,7 +48,8 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         testCorrectAnswer,
         userTest,
         userTestArrey,
-        userTestArr = [];
+        userTestArr = [],
+        gotUserTest;
 
     // отрисовка DOM
     var createInputLayout = function createInputLayout() {
@@ -108,14 +109,17 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         console.log('arr', userTestArr);
         console.log('arr1', userTestArrey);
 
-        localStorage.setItem('userTestArr', JSON.stringify(userTest));
-        console.log('arrString', userTest);
+        localStorage.setItem('userTestArr', JSON.stringify(userTestArr));
+        gotUserTest = localStorage.getItem('userTestArr');
+        gotUserTest = JSON.parse(gotUserTest);
+        console.log('gotUserTest', gotUserTest);
+        console.log('question from UserTest', gotUserTest[0].question);
     };
 
-    // const testRadio = {
-    //     __proto__: Test;
-    // };
-    // const testCheckbox = {
-    //     __proto__: Test;
-    // };
+    var testRadio = {
+        __proto__: userTest
+    };
+    var testCheckbox = {
+        __proto__: userTest
+    };
 })();
