@@ -1,0 +1,41 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+.logo {
+    background: url("../surching_tool/img/logo.png");
+    height: 282px;
+    width: 320px;
+    align-self: center;
+}
+.form-wrapper {
+    align-self: center;
+}
+input {
+    width: 350px;
+    height: 30px;
+    border: 1px solid #49a0ae;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+button {
+    background-color: #49a0ae;
+    width: 100px;
+    height: 40px;
+}
+.pics-wrapper {
+    display: flex;
+    align-self: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+img {
+    width: 350px;
+    height: 350px;
+    border: 1px solid #49a0ae;
+    margin: 20px;
+}
