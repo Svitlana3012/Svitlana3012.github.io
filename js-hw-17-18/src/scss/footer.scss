@@ -1,0 +1,41 @@
+@mixin red-opacity {
+  background-color: #ff0000;
+  opacity: 0.5;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+.wrapper {
+  display: flex;
+  margin: 5rem auto;
+}
+.contacts {
+  display: flex;
+  flex-direction: column;
+}
+.phone, .address, .map, .work_hours {
+  display: flex;
+  padding: 1rem;
+}
+.round {
+  display: table;
+  height: 2rem;
+  width: 2rem;
+  @include red-opacity;;
+  border-radius: 100%;
+  text-align: center;
+  & i {
+    display: table-cell;
+    color: white;
+    vertical-align: middle;
+  }
+}
+.bigfigures {
+  text-decoration: none;
+  font-size: 1.4rem;
+  color: white;
+}
+iframe {
+  box-shadow: 0 0 0.7rem #ff0000;
+}

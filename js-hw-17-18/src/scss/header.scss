@@ -1,0 +1,126 @@
+@mixin red-opacity {
+  background-color: #ff0000;
+  opacity: 0.5;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-height: 100vh;
+  main {
+    flex-grow: 1;
+  }
+}
+.choice {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem;
+  margin: 9rem auto;
+  a {
+    width: 20%;
+    height: 19rem;
+    background-size: cover;
+    position: relative;
+    box-shadow: 0 0 0.7rem #ff0000;
+  }
+}
+a:hover::after {
+  visibility: visible;
+}
+.lady {
+  background: url('../../src/img/lady.jpg');
+  &::after {
+    position: absolute;
+    display: block;
+    content: "Женская одежда";
+    width: 100%;
+    height: 3rem;
+    @include red-opacity;
+    visibility: hidden;
+    top: 16rem;
+    color: white;
+    text-align: center;
+    line-height: 3rem;
+    transition: up 3s linear;
+  }
+}
+.man {
+  background: url("../../src/img/man5.jpg");
+  &::after {
+    position: absolute;
+    display: block;
+    content: "Мужская одежда";
+    width: 100%;
+    height: 3rem;
+    @include red-opacity;
+    visibility: hidden;
+    top: 16rem;
+    color: white;
+    text-align: center;
+    line-height: 3rem;
+    transition: 3s;
+  }
+}
+.child {
+  background: url("../../src/img/child.jpg");
+  &::after {
+    position: absolute;
+    display: block;
+    content: "Подростковая одежда";
+    width: 100%;
+    height: 3rem;
+    @include red-opacity;
+    visibility: hidden;
+    top: 16rem;
+    color: white;
+    text-align: center;
+    line-height: 3rem;
+    transition: 3s;
+  }
+}
+.baby {
+  background: url("../../src/img/baby.jpg");
+  &::after {
+    position: absolute;
+    display: block;
+    content: "Детская одежда";
+    width: 100%;
+    height: 3rem;
+    @include red-opacity;
+    visibility: hidden;
+    top: 16rem;
+    color: white;
+    text-align: center;
+    line-height: 3rem;
+    transition: 3s;
+  }
+}
+body {
+  background: url("../../src/img/audrey-hepburn-window-shopping.jpg") no-repeat;
+  background-size: cover;
+  font-family: Arial;
+}
+header {
+  @include red-opacity;
+  height: 3rem;
+  width: 100%;
+  .menu {
+    display: flex;
+    justify-content: flex-end;
+    a {
+      color: white;
+      text-decoration: none;
+      margin: 1rem;
+      &:hover {
+        color: white;
+        font-weight: bold;
+        opacity: 1;
+      }
+    }
+  }
+}
