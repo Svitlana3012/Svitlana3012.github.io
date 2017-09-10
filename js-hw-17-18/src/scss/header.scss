@@ -33,7 +33,7 @@ a:hover::after {
   visibility: visible;
 }
 .lady {
-  background: url('../../src/img/lady.jpg');
+  background: url('../img/lady.jpg');
   &::after {
     position: absolute;
     display: block;
@@ -50,7 +50,7 @@ a:hover::after {
   }
 }
 .man {
-  background: url("../../src/img/man5.jpg");
+  background: url("../img/man5.jpg");
   &::after {
     position: absolute;
     display: block;
@@ -67,7 +67,7 @@ a:hover::after {
   }
 }
 .child {
-  background: url("../../src/img/child.jpg");
+  background: url("../img/child.jpg");
   &::after {
     position: absolute;
     display: block;
@@ -84,7 +84,7 @@ a:hover::after {
   }
 }
 .baby {
-  background: url("../../src/img/baby.jpg");
+  background: url("../img/baby.jpg");
   &::after {
     position: absolute;
     display: block;
@@ -101,7 +101,7 @@ a:hover::after {
   }
 }
 body {
-  background: url("../../src/img/audrey-hepburn-window-shopping.jpg") no-repeat;
+  background: url("../img/audrey-hepburn-window-shopping.jpg") no-repeat;
   background-size: cover;
   font-family: Arial;
 }

@@ -39,7 +39,7 @@ var serverConfig = {
     port: 9000,
     logPrefix: 'NASA',
     notify: false
-}
+};
 
 gulp.task('bundleHtml', function() {
     return gulp.src(paths.src.html)
