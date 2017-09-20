@@ -9,14 +9,14 @@
 // вернуть готовый узел
 
 function createNode(type, cls, attributes, str) {
-    var el = document.createElement(type);
+    let el = document.createElement(type);
 
     if (cls && (typeof cls === 'string')) {
         el.classList.add(cls);
     }
 
     if (attributes && (typeof attributes === 'object')) {
-        for (var i = 0; i < attributes.length; i++) {
+        for (let i = 0; i < attributes.length; i++) {
             el.setAttribute(attributes[i].name, attributes[i].value);
         }
     }
@@ -28,97 +28,141 @@ function createNode(type, cls, attributes, str) {
     return el;
 }
 
-var body = document.querySelector('body'),
+let body = document.querySelector('body'),
     form,
     formQuestion,
+    formAnswersQuantity,
     formAnswers,
     formAnswer,
-    fragment,
+    fragmentFormAnswer,
     formCorrectAnswer,
     formButton,
     testQuestion,
-    testAnswer1,
+    fragmentTestAnswer,
+    testAnswer,
     testAnswer2,
     testAnswer3,
     testAnswer4,
     testCorrectAnswer,
     userTest,
-    userTestArrey,
+    userTestArray,
     userTestArr = [],
     gotUserTest;
 
-// отрисовка DOM
-const createInputLayout = function() {
-    form = createNode('form', 'form-wrapper', null, null);
-    formQuestion = createNode('input', 'form-question', [{name: 'placeholder', value: 'введите вопрос'}, {name: 'id', value: 'question'}], null);
-    formAnswers = createNode('div', 'form-answers', null, null);
-    fragment = document.createDocumentFragment();
-    for (var i=0; i<4; i++){
-        formAnswer = createNode('input', `answer`, [{name: 'placeholder', value: 'введите вариант ответа'}], null);
-        formAnswer.setAttribute('id', `answer${[i]}`);
-        fragment.appendChild(formAnswer);
-    }
-    formCorrectAnswer = createNode('input', 'form-correct-answer', [{name: 'placeholder', value: 'введите ПРАВИЛЬНЫЙ(ые) вариант(ы) ответа'}, {name: 'id', value: 'correct-answer'}], null);
-    formButton = createNode('button', 'form-button-fulfil', null, 'ЗАПОЛНИТЬ ТЕСТ ФОРМУ');
+// !отрисовка DOM
+// отрисовка инпутов для вопроса, кол-ва вариантов ответов
+    const createInputLayout = function() {
+        form = createNode('form', 'form-wrapper', null, null);
+        formQuestion = createNode('input', 'form-question', [{name: 'placeholder', value: 'введите вопрос'}, {name: 'id', value: 'question'}], null);
+        formAnswersQuantity = createNode('input', 'form-answers-quantity', [{name: 'placeholder', value: 'введите КОЛИЧЕСТВО вариантов ответа'}, {name: 'id', value: 'answers-quantity'}, {name: 'onchange', value: 'createAnswersInputLayout()'}], null);
 
-    form.appendChild(formQuestion);
-    form.appendChild(formAnswers).appendChild(fragment);
-    form.appendChild(formCorrectAnswer);
-    form.appendChild(formButton);
-    body.appendChild(form);
-};
-createInputLayout();
+        form.appendChild(formQuestion);
+        form.appendChild(formAnswersQuantity);
 
-//по клику создается тест
-formButton.addEventListener('click', e => {
-    e.preventDefault();
-    createTest();
-
-});
-
-function createTest() {
-    //забираем значения инпутов
-    const getValues = () => {
-        testQuestion = document.getElementById('question').value;
-        testAnswer1 = document.getElementById('answer0').value;
-        testAnswer2 = document.getElementById('answer1').value;
-        testAnswer3 = document.getElementById('answer2').value;
-        testAnswer4 = document.getElementById('answer3').value;
-        testCorrectAnswer = document.getElementById('correct-answer').value;
+        body.appendChild(form);
     };
-    getValues();
-    //конструктор
-    function Test(question, answer1, answer2, answer3, answer4, correctAnswer) {
-        return {
-            question,
-            answer1,
-            answer2,
-            answer3,
-            answer4,
-            correctAnswer
+    createInputLayout();
+
+// добавление инпутов для вариантов ответов
+
+    formAnswersQuantity.onchange = function createAnswersInputLayout() {
+        let answers = document.getElementById('answers-quantity').value;
+        formAnswers = createNode('div', 'form-answers', null, null);
+        fragmentFormAnswer = document.createDocumentFragment();
+
+        if (isNaN(answers)){
+            alert('ВВЕДИТЕ ЧИСЛО');
+        }
+        else {
+            let layout = false;
+            if(!layout) {
+                for (let i = 0; i < answers; i++) {
+                    formAnswer = createNode('input', `answer`, [{
+                        name: 'placeholder',
+                        value: 'введите вариант ответа'
+                    }], null);
+                    formAnswer.setAttribute('id', `answer${[i]}`);
+                    fragmentFormAnswer.appendChild(formAnswer);
+                }
+                form.appendChild(formAnswers).appendChild(fragmentFormAnswer);
+
+                // добавление инпута правильного ответа и кнопки
+                const createLayout = function () {
+                    formCorrectAnswer = createNode('input', 'form-correct-answer', [{
+                        name: 'placeholder',
+                        value: 'введите НОМЕР ПРАВИЛЬНОГО варианта ответа'
+                    }, {name: 'id', value: 'correct-answer'}], null);
+                    formButton = createNode('button', 'form-button-fulfil', null, 'ЗАПОЛНИТЬ ТЕСТ ФОРМУ');
+                    form.appendChild(formCorrectAnswer);
+                    form.appendChild(formButton);
+                    layout = true;
+                };
+                createLayout();
+
+            }
         }
     };
 
-    userTest = new Test(testQuestion, testAnswer1, testAnswer2, testAnswer3, testAnswer4, testCorrectAnswer);
-    userTestArr.push(userTest);
-    userTestArrey = Object.values(userTest);
-    console.log('usertest', userTest);
-    console.log('arr', userTestArr);
-    console.log('arr1', userTestArrey);
 
-    localStorage.setItem('userTestArr', JSON.stringify(userTestArr));
-    gotUserTest = localStorage.getItem('userTestArr');
-    gotUserTest = JSON.parse(gotUserTest);
-    console.log('gotUserTest', gotUserTest);
-    console.log('question from UserTest', gotUserTest[0].question);
+//по клику создается тест
+    formButton.addEventListener('click', e => {
+        e.preventDefault();
+        createTest();
+    });
 
-};
+    function createTest() {
+        //забираем значения инпутов
+        const getValues = () => {
+            let answers = document.getElementById('answers-quantity').value;
+            testQuestion = document.getElementById('question').value;
+            console.log('testQuestion', testQuestion);
+            // fragmentTestAnswer = document.createDocumentFragment();
+            // for (let i = 0; i < answers; i++) {
+            //     testAnswer = fragmentFormAnswer.getElementById('answer').value;
+            //     fragmentTestAnswer.appendChild(testAnswer);
+            // }
+            // console.log('fragmentTestAnswer', fragmentTestAnswer);
 
-const testRadio = {
-    __proto__: userTest
-};
-const testCheckbox = {
-    __proto__: userTest
-};
+            testAnswer2 = document.getElementById('answer1').value;
+            testAnswer3 = document.getElementById('answer2').value;
+            testAnswer4 = document.getElementById('answer3').value;
+            testCorrectAnswer = document.getElementById('correct-answer').value;
+        };
+        getValues();
+        //
+        // //конструктор
+        // function Test(question, answer1, answer2, answer3, answer4, correctAnswer) {
+        //     return {
+        //         question,
+        //         answer1,
+        //         answer2,
+        //         answer3,
+        //         answer4,
+        //         correctAnswer
+        //     }
+        // };
+        //
+        // userTest = new Test(testQuestion, testAnswer1, testAnswer2, testAnswer3, testAnswer4, testCorrectAnswer);
+        // userTestArr.push(userTest);
+        // userTestArray = Object.values(userTest);
+        // console.log('usertest', userTest);
+        // console.log('arr', userTestArr);
+        // console.log('arr1', userTestArrey);
+        //
+        // localStorage.setItem('userTestArr', JSON.stringify(userTestArr));
+        // gotUserTest = localStorage.getItem('userTestArr');
+        // gotUserTest = JSON.parse(gotUserTest);
+        // console.log('gotUserTest', gotUserTest);
+        // console.log('question from UserTest', gotUserTest[0].question);
+
+    };
+
+    const testRadio = {
+        __proto__: userTest
+    };
+    const testCheckbox = {
+        __proto__: userTest
+    };
+
 
 })();
