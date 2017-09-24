@@ -3,12 +3,31 @@ body {
     font-family: Tahoma;
     color: #204035;
 }
+.root {
+    display: flex;
+    flex-direction: column;
+}
+li {
+    list-style: none;
+    font-size: 12px;
+    padding: 3px;
+}
+.question {
+    background-color: rgba(102, 205, 170, 0.51);
+    border: 1px solid #3e7d68;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 20px;
+    width: 1000px;
+    margin: 10px 50px;
+}
 .form-wrapper {
     display: flex;
     flex-direction: column;
 }
 
-input {
+input:not(.checkboxes) {
     background-color: rgba(102, 205, 170, 0.51);
     border: 1px solid #3e7d68;
     border-radius: 5px;
@@ -25,4 +44,18 @@ button {
     align-self: center;
     height: 50px;
     width: 250px;
+}
+.popupWindow {
+    text-align: center;
+    line-height: 150px;
+    background-color: #3e7d68;
+    border: solid #204035 1px;
+    color: #204035;
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    width: 400px;
+    height: 150px;
+    top: 350px;
+    left: 250px;
 }
