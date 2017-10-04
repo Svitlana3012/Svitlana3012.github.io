@@ -20,9 +20,11 @@
     "gulp-imagemin": "^3.3.0",
     "gulp-rigger": "^0.5.8",
     "gulp-sass": "^3.1.0",
-    "gulp-uglify": "^3.0.0"
+    "gulp-uglify": "^3.0.0",
+    "imagemin-pngquant": "^5.0.1"
   },
   "dependencies": {
+    "browser-sync": "^2.18.13",
     "debug-log": "^1.0.1",
     "del": "^3.0.0"
   }
