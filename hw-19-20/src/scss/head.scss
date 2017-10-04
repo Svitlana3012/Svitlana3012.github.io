@@ -1,0 +1,15 @@
+@import "typography";
+
+.header-links {
+  display: flex;
+  justify-content: space-between;
+  padding: $padding;
+}
+.logo {
+  display: inline-block;
+  width: 204px;
+  height: 36px;
+  background-image: url("../img/logo.png");
+}
+
+.social
