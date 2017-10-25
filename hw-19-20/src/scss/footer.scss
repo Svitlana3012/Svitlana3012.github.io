@@ -1,0 +1,70 @@
+@import "typography";
+.sponsors {
+  padding: 85px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-links {
+  @extend .sponsors;
+  padding: 50px 40px;
+  background-color: $dark;
+}
+.footer {
+  @extend .sponsors;
+  padding: 20px 40px;
+  background-color: $light-dark;
+}
+.sponsors-item {
+  display: block;
+  width: 160px;
+  height: 68px;
+  &-1 {
+    background: url("../img/sponsors-logo.png") 0 0 no-repeat;
+  }
+  &-2 {
+    background: url("../img/sponsors-logo.png") -190px 0 no-repeat;
+  }
+  &-3 {
+    background: url("../img/sponsors-logo.png") -404px 0 no-repeat;
+  }
+  &-4 {
+    background: url("../img/sponsors-logo.png") -632px 0 no-repeat;
+  }
+  &-5 {
+    background: url("../img/sponsors-logo.png") -830px 0 no-repeat;
+  }
+  &-6 {
+    background: url("../img/sponsors-logo.png") -1008px 0 no-repeat;
+  }
+}
+.socials-list {
+
+  text-transform: uppercase;
+  margin-bottom: 45px;
+  a {
+    color: white;
+  }
+}
+.socials-item {
+  font-size: 13px;
+  width: 260px;
+  line-height: 36px;
+  border-bottom: 1px solid #828385;
+  a {
+    color: #828385;
+    &:hover {
+      color: $blue;
+    }
+  }
+}
+.contacts {
+  font-size: 12px;
+  color: #828385;
+  text-align: center;
+}
+.contact {
+  width: 20px;
+  height: 20px;
+  color: #828385;
+}

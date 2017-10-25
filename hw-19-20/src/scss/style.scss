@@ -1,3 +1,10 @@
+@import "typography";
+
+.body {
+  font-family: "UbuntuCondensedRegular", Arial, sans-serif;
+  font-size: 16px;
+  box-sizing: border-box;
+}
 .root {
-  width: 1200px;
+  width: 1250px;
 }

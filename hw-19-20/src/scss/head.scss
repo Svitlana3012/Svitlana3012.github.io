@@ -1,15 +1,71 @@
 @import "typography";
-
+.header{
+  padding: $padding;
+}
 .header-links {
   display: flex;
   justify-content: space-between;
-  padding: $padding;
+  padding-bottom: 36px;
+  .logo {
+    display: inline-block;
+    width: 208px;
+    height: 36px;
+    background-image: url("../img/logo.png");
+    background-repeat: no-repeat;
+  }
+  &--social {
+     display: flex;
+   }
 }
-.logo {
-  display: inline-block;
-  width: 204px;
-  height: 36px;
-  background-image: url("../img/logo.png");
+.social {
+  height: 17px;
+  width: 17px;
+  margin: 8px;
+  &:hover{
+    fill: $blue;
+  }
 }
-
-.social
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $dark;
+  padding-right: 8px;
+  .header-menu {
+    display: flex;
+    .menu-item {
+      border: 1px solid black;
+      padding: 22px;
+      &:hover {
+        background-color: $blue;
+      }
+      .menu-link{
+        color: white;
+      }
+    }
+  }
+}
+.search-form {
+  position: relative;
+}
+.search-input {
+  padding: 12px;
+  background-color: $light-dark;
+  border: 1px solid black;
+  color: $grey;
+}
+.search-button {
+  position: absolute;
+  cursor: pointer;
+  top: 13px;
+  right: 20px;
+  width: 20px;
+  height: 20px;
+  border: none;
+  background-color: $light-dark;
+  i {
+    width: 20px;
+    height: 20px;
+    color: $grey;
+  }
+}

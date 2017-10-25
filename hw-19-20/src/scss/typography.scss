@@ -1,1 +1,35 @@
-$padding: 18px;
+$padding: 40px;
+
+$blue: #248cec;
+$orange: #f4b60d;
+$dark: #2a2d32;
+$light-dark: #35383c;
+$grey: #cccccc;
+$light-gray: #efeff0;
+
+@font-face {
+  font-family: "UbuntuCondensedRegular";
+  src: url("../fonts/UbuntuCondensedRegular/UbuntuCondensedRegular.eot");
+  src: url("../fonts/UbuntuCondensedRegular/UbuntuCondensedRegular.eot?#iefix")format("embedded-opentype"),
+  url("../fonts/UbuntuCondensedRegular/UbuntuCondensedRegular.woff") format("woff"),
+  url("../fonts/UbuntuCondensedRegular/UbuntuCondensedRegular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+h5 {
+  font-size: 16px;
+  font-weight: bold;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+@mixin text {
+  font-size: 13px;
+  line-height: 20px;
+  color: #8a8a8a;
+}
