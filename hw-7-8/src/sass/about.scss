@@ -1,0 +1,74 @@
+@import "media.scss";
+@import "typography.scss";
+@import "color-map.scss";
+
+.container {
+  max-width: 960px;
+  min-width: 320px;
+}
+[class*="wrapper"] {
+  display: flex;
+  justify-content: center;
+}
+[class*="box"] {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper-purple {
+  @include purple-gradient;
+  border-top: 0.1rem solid #322539;
+  border-bottom: 0.1rem solid #322539;
+  @include white-shadow;
+  padding: 4.9rem 1.25rem;
+}
+.wrapper-articles {
+  display: flex;
+  align-items: center;
+  flex-flow: column wrap;
+  @media #{$tablet} {
+    flex-flow: row;
+  }
+}
+.article-item {
+  display: flex;
+  [class*="icon"] {
+    height: 2rem;
+    width: 3.8rem;
+    padding: 0.3rem;
+    margin: 0.5rem;
+    @media (max-width: 420px) and (min-width: 330px) {
+      width: 3rem;
+    }
+    @media (max-width: 569px) and (min-width: 421px) {
+      width: 2rem;
+    }
+    @media (max-width: 767px) and (min-width: 570px) {
+      width: 1.5rem;
+    }
+  }
+  .icon-tool {
+    background: url('../img/sprite.png') -14.21rem 0 no-repeat;
+  }
+  .icon-talk {
+    background: url('../img/sprite.png') -11.19rem 0 no-repeat;
+  }
+  .icon-music {
+    background: url('../img/sprite.png') -8rem 0 no-repeat;
+  }
+  .article-box {
+    padding: 0.7rem;
+    a {
+      @include white-shadow;
+      padding: 0.8rem 0.1rem;
+      align-self: flex-end;
+      &:hover {
+        text-shadow: 0 0 0.5rem white;
+      }
+    }
+    p {
+      line-height: 1.3rem;
+      padding-top: 0.3rem;
+    }
+  }
+}

@@ -1,0 +1,75 @@
+@import "media.scss";
+@import "typography.scss";
+@import "color-map.scss";
+
+.container {
+  max-width: 960px;
+  min-width: 320px;
+}
+[class*="wrapper"] {
+  display: flex;
+  justify-content: center;
+}
+[class*="box"] {
+  display: flex;
+  flex-direction: column;
+}
+.medium-gray {
+  display: none;
+  @media #{$mobile} {
+    display: block;
+    background: $medium-gray;
+    padding: 5rem 1.25rem;
+  }
+}
+.box-list-news {
+  display: flex;
+  .logo-monochrome {
+    display: none;
+  }
+  .copyright {
+    display: none;
+  }
+  @media #{$mobile} {
+    display: flex;
+    flex-direction: column;
+    .box-item-news:not(:first-child) {
+      margin-top: 3.9rem;
+      @media #{$tablet} {
+        margin-top: 0;
+        margin-left: 3rem;
+      }
+    }
+    p {
+      line-height: 1.3rem;
+      padding-top: .3rem;
+    }
+  }
+  @media #{$tablet} {
+    flex-flow: row;
+    padding: 3rem;
+  }
+  @media #{$desktop} {
+    .box-item-news:first-child {
+      .logo-monochrome {
+        display: block;
+        height: 2.32rem;
+        width: 8.4rem;
+        background: url('../img/logo-mh.png');
+      }
+      .copyright {
+        display: block;
+        font-style: italic;
+        color: $dark-gray;
+        font-size: 0.7rem;
+      }
+      h2 {
+        display: none;
+      }
+      .news {
+        overflow: hidden;
+        height: 5rem;
+      }
+    }
+  }
+}

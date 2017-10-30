@@ -1,0 +1,54 @@
+@import "media.scss";
+@import "typography.scss";
+@import "color-map.scss";
+
+.container {
+  max-width: 960px;
+}
+[class*="wrapper"] {
+  display: flex;
+  justify-content: center;
+}
+[class*="box"] {
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  background: url('../img/bg-footer.png') -978px 0 no-repeat;
+  padding: 2.9rem 1.25rem;
+}
+.box-footer-list{
+  align-items: center;
+  justify-content: center;
+  .menu-footer {
+    display: none;
+    @media #{$mobile} {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    li {
+      text-transform: uppercase;
+      @include white-shadow;
+      width: auto;
+      text-align: center;
+      font-size: 1.2rem;
+    }
+  }
+    @media #{$tablet} {
+      width: 60%;
+      align-self: flex-start;
+    }
+}
+  .trademark {
+    font-size: .75rem;
+    @include white-shadow;
+    margin-top: 2.6rem;
+    .trademark-bold {
+      font-weight: bold;
+    }
+    @media #{$tablet} {
+      align-self: flex-end;
+    }
+  }
+}

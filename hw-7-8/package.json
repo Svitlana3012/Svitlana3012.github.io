@@ -1,24 +1,37 @@
 {
-  "name": "gulp-sass-starter",
-  "version": "1.0.0",
-  "description": "Template to start learning sass",
-  "main": "gulpfile.js",
+  "name": "gulp-boilerplate",
+  "version": "1.2.0",
+  "description": "Gulp Project Boilerplate",
+  "main": "index.js",
   "scripts": {
-    "watch": "./node_modules/.bin/gulp"
+    "start": "gulp start"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mkhrystunov/gulp-sass-starter.git"
+    "url": "git+https://github.com/axZerk/gulp-project-tpl.git"
   },
-  "author": "Maksym Khrystunov <mkhrystunov@gmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/mkhrystunov/gulp-sass-starter/issues"
-  },
-  "homepage": "https://github.com/mkhrystunov/gulp-sass-starter#readme",
+  "license": "ISC",
   "devDependencies": {
+    "babel-preset-env": "^1.5.2",
+    "browser-sync": "^2.18.12",
+    "del": "^3.0.0",
     "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-babel": "^6.1.2",
+    "gulp-cache": "^0.4.6",
+    "gulp-cached": "^1.1.1",
     "gulp-concat": "^2.6.1",
-    "gulp-sass": "^3.1.0"
+    "gulp-cssnano": "^2.1.2",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-imagemin": "^3.3.0",
+    "gulp-merge-media-queries": "^0.2.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rigger": "^0.5.8",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-uglify": "^3.0.0",
+    "imagemin-gifsicle": "^5.2.0",
+    "imagemin-jpegtran": "^5.0.2",
+    "imagemin-optipng": "^5.2.1"
   }
 }

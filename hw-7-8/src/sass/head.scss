@@ -10,7 +10,9 @@
   flex-direction: column;
 }
 .container {
-  max-width: 961px;
+  max-width: 960px;
+  min-width: 320px;
+  width: 100%;
 }
 .transparent-container {
   display: none;
@@ -25,21 +27,15 @@
     z-index: 1;
   }
 }
-header {
+.header-wrapper {
   position: relative;
-  display: flex;
-  justify-content: center;
+  padding: 4.9rem 0;
   background: url("../img/bg.png") -65rem 0 no-repeat;
-  height: 32.3rem;
-  width:100%;
+  background-attachment: fixed;
   @include white-shadow;
-  padding-top: 4.9rem;
-  @media #{$mobile} {
-    height: 34.37rem;
-  }
   @media #{$tablet} {
     background: url("../img/bg.png") -50rem 0 no-repeat;
-    padding-top: 4rem;
+    padding: 4rem 0;
   }
 }
 .navbar {
@@ -67,7 +63,7 @@ header {
 .wrapper-menu {
   height: 16.1rem;
   width: 15.3rem;
-  @media (max-width: 767px) and (min-width: 320px) {
+  @media (max-width: 767px) and (min-width: 319px) {
   &:hover {
     border: .1rem solid $dark-purple;
     border-radius: 1rem;
@@ -148,8 +144,22 @@ header {
  }
  }
 }
+.slider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cell {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  position: relative;
+  top: -8rem;
+  @media #{$tablet} {
+    justify-content: space-around;
+  }
 
-article {
+  &-article-box {
     z-index: 1;
     width: 13rem;
     align-items: center;
@@ -166,7 +176,6 @@ article {
     }
   h3 {
     color: $light-purple;
-    text-shadow: .1rem .1rem .2rem gray;
   }
   .text {
     display: none;
@@ -175,8 +184,8 @@ article {
     line-height: 1.5rem;
   }
   }
-}
-.cell-phone {
+  }
+  &-phone {
   display: none;
   @media #{$mobile} {
     display: block;
@@ -191,18 +200,11 @@ article {
     top: -4rem;
   }
 }
-.cell {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  top: -8rem;
-  @media #{$tablet} {
-    justify-content: space-around;
-  }
 }
 .arrows {
+  width: 100%;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: space-between;
   position: relative;
   z-index: 1;
@@ -234,3 +236,4 @@ article {
   border: .13rem solid gray;
   margin: .2rem;
 }
+
